@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "brand": "Pom Pam",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Suracha Hanthongchai (Pom Pam)",
+    "role": "Software Developer & Computer Educator",
+    "subtitle": "I build scalable applications and healthcare software, and I weave AI into real-world workflows — from hospital systems to the classroom.",
+    "downloadResume": "Download Resume",
+    "viewProjects": "View Projects",
+    "imageAlt": "Portrait of Suracha Hanthongchai (Pom Pam)",
+    "nameEcho": "พอมแพม"
+  },
+  "about": {
+    "eyebrow": "Who I Am",
+    "heading": "About Me",
+    "bio1": "I'm a software developer and computer educator based in Thailand. My core work is healthcare software — designing and maintaining EHP hospital modules that clinicians rely on every day — alongside full-stack development with React, Go, and SQL.",
+    "bio2": "Outside production code, I teach computer science, coach student robotics teams, and speak about practical AI adoption. I believe great software starts with understanding real users, and the best classrooms are the ones where students ship real projects."
+  },
+  "skills": {
+    "eyebrow": "Toolbox",
+    "heading": "Skills & Tech Stack",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend & Database",
+      "ai": "AI Tools"
+    }
+  },
+  "projects": {
+    "eyebrow": "Selected Work",
+    "heading": "Featured Projects",
+    "viewDetails": "View Details",
+    "items": {
+      "ehp": {
+        "title": "Healthcare EHP Modules",
+        "description": "Clinical and back-office modules for hospital information systems — appointment flows, lab result viewing, and pharmacy tooling built for daily use in Thai healthcare."
+      },
+      "metaherb": {
+        "title": "Metaherb E-commerce Dashboard",
+        "description": "An admin dashboard for a herbal-products store: sales analytics, inventory, and order management with role-based access — built as a fast single-page app."
+      },
+      "roblox": {
+        "title": "Educational Roblox Game",
+        "description": "A game-based learning world on Roblox that teaches coding logic through quests and puzzles, used in real classroom activities."
+      }
+    }
+  },
+  "certificates": {
+    "eyebrow": "Credentials",
+    "heading": "Certificates & Awards",
+    "issued": "Issued {{date}}",
+    "items": {
+      "arduino": {
+        "name": "Regional Arduino Robotics Coach"
+      },
+      "esan": {
+        "name": "E-SAN Thailand Coding & AI Academy"
+      },
+      "webcomp": {
+        "name": "Web Application Competition Award"
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Beyond the Keyboard",
+    "heading": "Activity Gallery",
+    "items": {
+      "g1": { "caption": "Teaching a programming class" },
+      "g2": { "caption": "Mentoring a student robotics team" },
+      "g3": { "caption": "Speaking at a developer meetup" },
+      "g4": { "caption": "Running a coding workshop" },
+      "g5": { "caption": "Coaching a hackathon team" },
+      "g6": { "caption": "Award ceremony with students" }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Get in Touch",
+    "intro": "Have a project, a class, or an idea to talk about? Send a message — I usually reply within a day or two.",
+    "directHeading": "Direct contact",
+    "form": {
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@example.com",
+        "message": "Tell me about your project or question…"
+      },
+      "submit": "Send Message",
+      "submitting": "Sending…",
+      "success": "Thanks! Your message has been sent — I'll get back to you soon.",
+      "error": "Something went wrong while sending. Please try again.",
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "messageRequired": "Please enter a message",
+        "messageTooShort": "Message must be at least 10 characters"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Suracha Hanthongchai. All rights reserved.",
+    "backToTop": "Back to top"
+  },
+  "language": {
+    "en": "EN",
+    "th": "ไทย"
+  },
+  "a11y": {
+    "primaryNav": "Primary",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "languageSwitcher": "Language",
+    "switchToEnglish": "Switch to English",
+    "switchToThai": "Switch to Thai",
+    "certificatesCarousel": "Certificates carousel",
+    "prevCertificate": "Previous certificate",
+    "nextCertificate": "Next certificate"
+  }
+}
