@@ -1,1 +1,54 @@
 @import 'tailwindcss';
+
+@theme {
+  --font-heading: 'Prompt', 'Noto Sans Thai', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Sarabun', 'Noto Sans Thai', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-zinc-950);
+    /* Ambient teal/sky glow anchored to the top of the page (spec assumption 3). */
+    background-image:
+      radial-gradient(60rem 40rem at 85% -10%, rgb(56 189 248 / 0.07), transparent 60%),
+      radial-gradient(50rem 35rem at -10% 5%, rgb(45 212 191 / 0.08), transparent 55%);
+    background-repeat: no-repeat;
+    color: var(--color-zinc-300);
+    font-family: var(--font-body);
+    /* Thai script needs generous leading; also comfortable for Latin body text. */
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-zinc-100);
+    line-height: 1.35;
+  }
+
+  ::selection {
+    background-color: var(--color-teal-400);
+    color: var(--color-zinc-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal-300);
+    outline-offset: 2px;
+  }
+}
