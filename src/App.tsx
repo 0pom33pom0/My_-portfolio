@@ -2,6 +2,7 @@ import { Navbar } from './components/Navbar.tsx'
 import { Hero } from './components/Hero.tsx'
 import { About } from './components/About.tsx'
 import { Skills } from './components/Skills.tsx'
+import { Projects } from './components/Projects.tsx'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
       </main>
     </>
   )
