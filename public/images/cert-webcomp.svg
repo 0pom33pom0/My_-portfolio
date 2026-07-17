@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <title>Web Application Competition Award certificate placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101015"/>
+      <stop offset="1" stop-color="#0b1118"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="690" cy="520" r="180" fill="#2dd4bf" opacity="0.06"/>
+  <rect x="60" y="60" width="680" height="480" rx="20" fill="#14171f" stroke="url(#ac)" stroke-opacity="0.5" stroke-width="3"/>
+  <rect x="120" y="140" width="360" height="22" rx="11" fill="#3f4654"/>
+  <rect x="120" y="196" width="440" height="14" rx="7" fill="#2a303c"/>
+  <rect x="120" y="228" width="380" height="14" rx="7" fill="#2a303c"/>
+  <path d="M560 320 h120 v46 c0 34 -27 62 -60 62 s-60 -28 -60 -62 Z" fill="url(#ac)" opacity="0.9"/>
+  <path d="M544 330 h16 v30 c-10 -2 -16 -14 -16 -30 Z M696 330 h-16 v30 c10 -2 16 -14 16 -30 Z" fill="#2dd4bf" opacity="0.6"/>
+  <rect x="606" y="428" width="28" height="26" fill="url(#ac)" opacity="0.9"/>
+  <rect x="586" y="454" width="68" height="12" rx="6" fill="url(#ac)"/>
+  <rect x="120" y="420" width="180" height="10" rx="5" fill="#2a303c"/>
+  <rect x="120" y="444" width="140" height="10" rx="5" fill="#2a303c"/>
+  <text x="80" y="572" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#8b93a3">cert-webcomp.svg - web app competition award</text>
+</svg>

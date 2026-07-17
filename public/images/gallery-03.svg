@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675">
+  <title>Speaking at a developer meetup placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101015"/>
+      <stop offset="1" stop-color="#0b1118"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <circle cx="780" cy="580" r="200" fill="#2dd4bf" opacity="0.06"/>
+  <circle cx="450" cy="250" r="55" fill="url(#ac)" opacity="0.85"/>
+  <path d="M350 470 C 370 350 530 350 550 470 Z" fill="url(#ac)" opacity="0.55"/>
+  <path d="M340 460 h220 l30 80 h-280 Z" fill="#1b202b" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+  <line x1="560" y1="330" x2="600" y2="300" stroke="#3f4654" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="608" cy="294" r="12" fill="#38bdf8"/>
+  <path d="M660 220 a60 60 0 0 1 0 90 M700 190 a105 105 0 0 1 0 150" fill="none" stroke="url(#ac)" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">gallery-03.svg - public speaking</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675">
+  <title>Coaching a hackathon team placeholder</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101015"/>
+      <stop offset="1" stop-color="#0b1118"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <circle cx="800" cy="120" r="200" fill="#38bdf8" opacity="0.06"/>
+  <circle cx="450" cy="300" r="120" fill="none" stroke="url(#ac)" stroke-width="6"/>
+  <line x1="450" y1="300" x2="450" y2="215" stroke="url(#ac)" stroke-width="6" stroke-linecap="round"/>
+  <line x1="450" y1="300" x2="515" y2="330" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="450" cy="300" r="12" fill="#2dd4bf"/>
+  <circle cx="290" cy="520" r="24" fill="#2a303c"/>
+  <circle cx="450" cy="540" r="24" fill="#2a303c"/>
+  <circle cx="610" cy="520" r="24" fill="#2a303c"/>
+  <rect x="270" y="560" width="360" height="12" rx="6" fill="#1b202b"/>
+  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">gallery-05.svg - hackathon coaching</text>
+</svg>
