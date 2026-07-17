@@ -5,6 +5,7 @@ import { Skills } from './components/Skills.tsx'
 import { Projects } from './components/Projects.tsx'
 import { Certificates } from './components/Certificates.tsx'
 import { Gallery } from './components/Gallery.tsx'
+import { Contact } from './components/Contact.tsx'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Projects />
         <Certificates />
         <Gallery />
+        <Contact />
       </main>
     </>
   )

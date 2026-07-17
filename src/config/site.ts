@@ -8,3 +8,9 @@ export const site: SiteConfig = {
   linkedinUrl: 'https://www.linkedin.com/in/your-profile',
   resumeUrl: '/resume.pdf',
 }
+
+/** Brand names are data, not translations (FR-002). */
+export const socialLinks = [
+  { id: 'github', label: 'GitHub', href: site.githubUrl },
+  { id: 'linkedin', label: 'LinkedIn', href: site.linkedinUrl },
+] as const
