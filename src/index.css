@@ -51,4 +51,11 @@
     outline: 2px solid var(--color-teal-300);
     outline-offset: 2px;
   }
+
+  /* Thai script must never be letter-spaced (combining marks + no word
+     spaces make tracking look broken); neutralize every tracking utility
+     while the page is in Thai. */
+  [lang='th'] :is(h1, h2, h3, h4, h5, h6, p, a, span, button, li) {
+    letter-spacing: 0 !important;
+  }
 }
