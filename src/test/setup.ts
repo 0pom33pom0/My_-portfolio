@@ -36,6 +36,9 @@ Object.defineProperty(window, 'matchMedia', {
 Element.prototype.scrollBy =
   Element.prototype.scrollBy ?? ((() => {}) as Element['scrollBy'])
 
+// Anchor navigation in jsdom logs "Not implemented: scrollTo" otherwise.
+window.scrollTo = (() => {}) as Window['scrollTo']
+
 beforeEach(() => {
   window.localStorage.clear()
 })

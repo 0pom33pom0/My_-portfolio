@@ -1,8 +1,11 @@
+import { Navbar } from './components/Navbar.tsx'
+
 function App() {
   return (
-    <main className="grid min-h-screen place-items-center bg-zinc-950 text-zinc-200">
-      <p className="text-lg">Scaffold ready</p>
-    </main>
+    <>
+      <Navbar />
+      <main className="mx-auto min-h-screen max-w-6xl px-4 sm:px-6" />
+    </>
   )
 }
 
