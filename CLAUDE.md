@@ -48,7 +48,7 @@ wep_pom/
 
 ```bash
 npm run dev         # Vite dev server
-npm run build       # tsc -b/--noEmit check + vite build → dist/
+npm run build       # tsc --noEmit && vite build → dist/
 npm run preview     # serve the production build
 npm run lint        # ESLint (zero warnings)
 npm run typecheck   # tsc --noEmit

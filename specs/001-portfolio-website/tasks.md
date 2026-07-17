@@ -1,6 +1,6 @@
 # Task Breakdown — Personal Portfolio Website (001-portfolio-website)
 
-16 tasks, dependency-ordered. Every task ends with the QC gate `npm run lint && npm run typecheck && npm test` (all green) and one atomic conventional commit with the AI-disclosure trailer (constitution III, V). "Covers" maps tasks to spec FRs for traceability.
+16 tasks, dependency-ordered. Every task ends with the QC gate `npm run lint && npm run typecheck && npm test` (all green) and one atomic conventional commit with the AI-disclosure trailer (constitution III, V). Exception: T001 predates the test harness, so its gate is `npm run lint && npm run typecheck && npm run build` only; the full gate (including `npm test`) applies from T002 onward. "Covers" maps tasks to spec FRs for traceability.
 
 ---
 
@@ -18,7 +18,7 @@
 
 ## T003 — i18n foundation (TDD: parity test first)
 - **Files:** `src/i18n/locales.test.ts`, `src/i18n/locales/en.json`, `src/i18n/locales/th.json`, `src/i18n/index.ts`, `src/main.tsx` (side-effect import)
-- **Steps:** RED: write the parity test (recursive key-path equality en↔th; every leaf a non-empty string) — fails (no files). GREEN: author COMPLETE dictionaries for ALL sections (nav, hero incl. exact headline/role/subtitle, about bio, skills headings/categories, projects incl. items ehp/metaherb/roblox title+description + viewDetails, certificates incl. items arduino/esan/webcomp names, gallery captions g1–g6, contact labels/placeholders/errors (5 keys)/status strings, footer, `a11y.*` control names). Thai name spelling per spec Assumption 5. Write `src/i18n/index.ts` (resources, supportedLngs ['en','th'], fallbackLng 'en', detector order localStorage→navigator with localStorage cache, escapeValue false, returnEmptyString false) + `<html lang>` sync on init and `languageChanged`. Import in `main.tsx`.
+- **Steps:** RED: write the parity test (recursive key-path equality en↔th; every leaf a non-empty string) — fails (no files) — plus an i18n config test asserting `fallbackLng` resolves to `en`, `supportedLngs` includes exactly `en`/`th`, and detection order is `['localStorage','navigator']` with localStorage caching (proxy verification for AC-1.1/1.2/1.4 and FR-004; full behavior re-verified manually in T016). GREEN: author COMPLETE dictionaries for ALL sections (nav, hero incl. exact headline/role/subtitle, about bio, skills headings/categories, projects incl. items ehp/metaherb/roblox title+description + viewDetails, certificates incl. items arduino/esan/webcomp names, gallery captions g1–g6, contact labels/placeholders/errors (5 keys)/status strings, footer, `a11y.*` control names). Thai name spelling per spec Assumption 5. Write `src/i18n/index.ts` (resources, supportedLngs ['en','th'], fallbackLng 'en', detector order localStorage→navigator with localStorage cache, escapeValue false, returnEmptyString false) + `<html lang>` sync on init and `languageChanged`. Import in `main.tsx`.
 - **Accept:** Parity test red→green demonstrated; app boots with i18n active; `document.documentElement.lang` set; QC gate passes.
 - **Test-first:** yes | **Depends-on:** T002 | **Covers:** FR-002, FR-003, FR-004, FR-006 (partial: init-time lang)
 
@@ -84,15 +84,15 @@
 
 ## T014 — Contact: validateContact (TDD) + form + section
 - **Files:** `src/lib/validateContact.test.ts`, `src/lib/validateContact.ts`, `src/components/ContactForm.test.tsx`, `src/components/ContactForm.tsx`, `src/components/Contact.tsx`, `src/App.tsx`
-- **Steps:** RED: unit tests for every branch (nameRequired, emailRequired, emailInvalid, messageRequired, messageTooShort <10, valid → `{}`). GREEN: implement pure `validateContact` returning error KEYS. RED: ContactForm tests (empty submit → localized alerts + aria-invalid; invalid email message; valid → submitting disabled → success; sentinel message "error" → error state, input preserved, retry possible; one assertion in TH). GREEN: controlled `ContactForm` with `FormStatus`, simulated submit (~900ms resolve; reject on sentinel), labels/ids, `role="alert"`, comment marking Formspree/EmailJS extension point. `Contact.tsx`: `#contact`, form + direct email (mailto) + GitHub/LinkedIn from `site.ts` with `rel="noopener noreferrer"`.
+- **Steps:** RED: unit tests for every branch (nameRequired, emailRequired, emailInvalid, messageRequired, messageTooShort <10, valid → `{}`). GREEN: implement pure `validateContact` returning error KEYS. RED: ContactForm tests (empty submit → localized alerts + aria-invalid; invalid email message; correcting the fields and resubmitting clears the previous errors (`role="alert"` gone, `aria-invalid` removed — FR-020 clearing clause); valid → submitting disabled → success; sentinel message "error" → error state, input preserved, retry possible; one assertion in TH). GREEN: controlled `ContactForm` with `FormStatus`, simulated submit (~900ms resolve; reject on sentinel), labels/ids, `role="alert"`, comment marking Formspree/EmailJS extension point. `Contact.tsx`: `#contact`, form + direct email (mailto) + GitHub/LinkedIn from `site.ts` with `rel="noopener noreferrer"`.
 - **Accept:** AC-8.1–8.5 pass in tests; all four states covered; lint, typecheck, and full test suite pass.
 - **Test-first:** yes | **Depends-on:** T005, T007, T008 | **Covers:** FR-018, FR-019, FR-020, FR-021, FR-022, FR-009 (contact id)
 
 ## T015 — Footer + full App assembly + bilingual smoke test
 - **Files:** `src/components/Footer.tsx`, `src/App.tsx`, `src/App.test.tsx` (replace trivial test)
-- **Steps:** Footer (contentinfo: localized © + name + year, back-to-top `#top`/hero anchor, small social repeat). Final App order: MotionConfig(user) → header/Navbar → main(Hero, About, Skills, Projects, Certificates, Gallery, Contact) → Footer; ids + `scroll-mt` on every section. Rewrite smoke test: landmarks (banner/navigation/main/contentinfo), exactly one h1, every section heading + id present in EN; switch language → headings in TH; `<html lang>` follows.
+- **Steps:** Footer (contentinfo: localized © + name + year, back-to-top `#top`/hero anchor, small social repeat). Final App order: MotionConfig(user) → header/Navbar → main(Hero, About, Skills, Projects, Certificates, Gallery, Contact) → Footer; ids + `scroll-mt` on every section. Rewrite smoke test: landmarks (banner/navigation/main/contentinfo), exactly one h1, every section heading + id present in EN plus an About bio snippet (FR-013); switch language → headings and bio snippet in TH; `<html lang>` follows.
 - **Accept:** Smoke green in both languages; FR-001 order verified; lint, typecheck, and full test suite pass.
-- **Test-first:** yes (smoke rewritten before wiring Footer/order fixes) | **Depends-on:** T008–T014 | **Covers:** FR-001, FR-002, FR-009, FR-023
+- **Test-first:** yes (smoke rewritten before wiring Footer/order fixes) | **Depends-on:** T008–T014 | **Covers:** FR-001, FR-002, FR-009, FR-013 (verification), FR-023
 
 ## T016 — Responsive, a11y, and motion polish pass
 - **Files:** any component/CSS touch-ups; no new features
