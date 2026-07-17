@@ -1,10 +1,13 @@
 import { Navbar } from './components/Navbar.tsx'
+import { Hero } from './components/Hero.tsx'
 
 function App() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto min-h-screen max-w-6xl px-4 sm:px-6" />
+      <main>
+        <Hero />
+      </main>
     </>
   )
 }
