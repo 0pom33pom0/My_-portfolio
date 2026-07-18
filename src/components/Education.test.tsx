@@ -22,6 +22,17 @@ describe('Education section', () => {
     expect(screen.getByAltText(item.imageAlt)).toBeInTheDocument()
   })
 
+  it('renders the senior high school entry with its GPA badge', () => {
+    render(<Education />)
+    const item = en.education.items.kamphaeng
+    expect(
+      screen.getByRole('heading', { level: 3, name: item.degree }),
+    ).toBeInTheDocument()
+    expect(screen.getByText(item.school)).toBeInTheDocument()
+    expect(screen.getByText(item.honor)).toBeInTheDocument()
+    expect(screen.getByAltText(item.imageAlt)).toBeInTheDocument()
+  })
+
   it('renders localized content in Thai', async () => {
     await i18n.changeLanguage('th')
     render(<Education />)
@@ -30,5 +41,8 @@ describe('Education section', () => {
       screen.getByRole('heading', { level: 3, name: item.degree }),
     ).toBeInTheDocument()
     expect(screen.getByText(item.honor)).toBeInTheDocument()
+    expect(
+      screen.getByText(th.education.items.kamphaeng.school),
+    ).toBeInTheDocument()
   })
 })

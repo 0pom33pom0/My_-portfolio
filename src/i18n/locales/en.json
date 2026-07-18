@@ -37,6 +37,13 @@
         "period": "Academic years 2020 – 2024",
         "honor": "First-Class Honors (GPA 3.82)",
         "imageAlt": "Graduation portrait in Khon Kaen University gown"
+      },
+      "kamphaeng": {
+        "degree": "Senior High School (Grades 10–12)",
+        "school": "Kamphaeng School",
+        "period": "Academic years 2017 – 2019",
+        "honor": "GPA 3.68",
+        "imageAlt": "Student portrait in Kamphaeng School uniform"
       }
     }
   },

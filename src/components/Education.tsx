@@ -6,10 +6,11 @@ import { SectionHeading } from './ui/SectionHeading.tsx'
 // Entry ids only (not display text); every string lives in the locale files
 // under education.items.<id>.* — add an id here plus keys in BOTH locales
 // to list another qualification.
-const EDUCATION_IDS = ['kku'] as const
+const EDUCATION_IDS = ['kku', 'kamphaeng'] as const
 
 const EDUCATION_IMAGES: Record<(typeof EDUCATION_IDS)[number], string> = {
   kku: '/images/education/graduation.jpg',
+  kamphaeng: '/images/education/kamphaeng.jpg',
 }
 
 function EducationPhoto({ id }: { id: (typeof EDUCATION_IDS)[number] }) {
@@ -41,7 +42,7 @@ function EducationPhoto({ id }: { id: (typeof EDUCATION_IDS)[number] }) {
 }
 
 export function Education() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
     <section
@@ -71,9 +72,11 @@ export function Education() {
                   <p className="mt-1 text-zinc-300">
                     {t(`education.items.${id}.school`)}
                   </p>
-                  <p className="text-zinc-400">
-                    {t(`education.items.${id}.field`)}
-                  </p>
+                  {i18n.exists(`education.items.${id}.field`) && (
+                    <p className="text-zinc-400">
+                      {t(`education.items.${id}.field`)}
+                    </p>
+                  )}
                   <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-400/15 to-sky-400/15 px-3.5 py-1.5 text-sm font-semibold text-teal-200 ring-1 ring-teal-300/30">
                     <svg
                       aria-hidden="true"
