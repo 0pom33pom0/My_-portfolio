@@ -7,7 +7,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: 'backend',
-    skills: ['Go', 'SQL'],
+    skills: ['Go', 'Node.js', 'Express.js', 'SQL', 'MongoDB', 'Swagger'],
   },
   {
     id: 'languages',
