@@ -1,14 +1,97 @@
 import { useTranslation } from 'react-i18next'
-import { site, socialLinks } from '../config/site.ts'
-import { ContactForm } from './ContactForm.tsx'
+import { siFacebook, siGithub, siInstagram, siLine } from 'simple-icons'
+import { site } from '../config/site.ts'
 import { Reveal } from './ui/Reveal.tsx'
 import { SectionHeading } from './ui/SectionHeading.tsx'
+
+// simple-icons carries no LinkedIn mark (brand policy); generic marks for
+// the non-brand channels.
+const LINKEDIN_PATH =
+  'M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z'
+const GLOBE_PATH =
+  'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.93 9h-3.47a15.6 15.6 0 0 0-2.1-6.53A8.02 8.02 0 0 1 19.93 11ZM12 4.2c1.1 1.55 2.03 3.94 2.44 6.8H9.56c.41-2.86 1.34-5.25 2.44-6.8ZM4.07 13h3.47c.24 2.4.97 4.68 2.1 6.53A8.02 8.02 0 0 1 4.07 13Zm3.47-2H4.07a8.02 8.02 0 0 1 5.57-6.53A15.6 15.6 0 0 0 7.54 11ZM12 19.8c-1.1-1.55-2.03-3.94-2.44-6.8h4.88c-.41 2.86-1.34 5.25-2.44 6.8Zm2.36-.27a15.6 15.6 0 0 0 2.1-6.53h3.47a8.02 8.02 0 0 1-5.57 6.53Z'
+const MAIL_PATH =
+  'M2 5c0-.55.45-1 1-1h18c.55 0 1 .45 1 1v.35l-10 6.25L2 5.35V5Zm0 2.7V19c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V7.7l-9.47 5.92c-.33.2-.73.2-1.06 0L2 7.7Z'
+const PHONE_PATH =
+  'M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.85 21 3 13.15 3 3.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z'
+
+const formatPhone = (digits: string) =>
+  digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')
+
+interface ContactChannel {
+  id: string
+  href: string
+  value: string
+  icon: { path: string; color: string }
+  external?: boolean
+}
+
+const CHANNELS: ContactChannel[] = [
+  {
+    id: 'email',
+    href: `mailto:${site.email}`,
+    value: site.email,
+    icon: { path: MAIL_PATH, color: '#38BDF8' },
+  },
+  {
+    id: 'phone',
+    href: `tel:+66${site.phone.slice(1)}`,
+    value: formatPhone(site.phone),
+    icon: { path: PHONE_PATH, color: '#2DD4BF' },
+  },
+  {
+    id: 'line',
+    href: `https://line.me/ti/p/~${site.lineId}`,
+    value: site.lineId,
+    icon: { path: siLine.path, color: `#${siLine.hex}` },
+    external: true,
+  },
+  {
+    id: 'facebook',
+    href: site.facebookUrl,
+    value: 'suracha.hanthongchai',
+    icon: { path: siFacebook.path, color: `#${siFacebook.hex}` },
+    external: true,
+  },
+  {
+    id: 'instagram',
+    href: site.instagramUrl,
+    value: '@manmini_pom',
+    icon: { path: siInstagram.path, color: `#${siInstagram.hex}` },
+    external: true,
+  },
+  {
+    id: 'github',
+    href: site.githubUrl,
+    value: '0pom33pom0',
+    icon: { path: siGithub.path, color: '#ffffff' },
+    external: true,
+  },
+  {
+    id: 'linkedin',
+    href: site.linkedinUrl,
+    value: 'suracha-hanthongchai',
+    icon: { path: LINKEDIN_PATH, color: '#4E9AE9' },
+    external: true,
+  },
+  {
+    id: 'w3profile',
+    href: site.w3profileUrl,
+    value: 'pomdev',
+    icon: { path: GLOBE_PATH, color: '#A5B4FC' },
+    external: true,
+  },
+]
 
 export function Contact() {
   const { t } = useTranslation()
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="scroll-mt-24">
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="scroll-mt-24"
+    >
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
         <Reveal>
           <SectionHeading
@@ -17,90 +100,44 @@ export function Contact() {
             title={t('contact.heading')}
           />
         </Reveal>
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <p className="max-w-md text-lg text-zinc-400">{t('contact.intro')}</p>
-            <h3 className="font-heading mt-8 text-sm font-medium tracking-wide text-zinc-200 uppercase">
-              {t('contact.directHeading')}
-            </h3>
-            <ul className="mt-4 space-y-2">
-              <li>
+        <Reveal>
+          <p className="max-w-2xl text-lg text-zinc-400">{t('contact.intro')}</p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CHANNELS.map((channel) => (
+              <li key={channel.id}>
                 <a
-                  href={`mailto:${site.email}`}
-                  className="inline-flex min-h-11 items-center gap-2.5 text-zinc-300 transition hover:text-teal-300"
+                  href={channel.href}
+                  {...(channel.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  className="flex items-center gap-4 rounded-2xl bg-white/[0.03] p-4 ring-1 ring-white/10 transition hover:bg-white/[0.05] hover:ring-teal-300/40"
                 >
-                  <svg
-                    aria-hidden="true"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="m3 7 9 6 9-6" />
-                  </svg>
-                  {site.email}
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/[0.04] ring-1 ring-white/10">
+                    <svg
+                      aria-hidden="true"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill={channel.icon.color}
+                    >
+                      <path d={channel.icon.path} />
+                    </svg>
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm text-zinc-500">
+                      {t(`contact.channels.${channel.id}`)}
+                    </span>
+                    <span className="block truncate font-medium text-zinc-100">
+                      {channel.value}
+                    </span>
+                  </span>
                 </a>
               </li>
-              {socialLinks.map((social) => (
-                <li key={social.id}>
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center gap-2.5 text-zinc-300 transition hover:text-teal-300"
-                  >
-                    {social.id === 'github' ? (
-                      <svg
-                        aria-hidden="true"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                      >
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
-                      </svg>
-                    ) : social.id === 'linkedin' ? (
-                      <svg
-                        aria-hidden="true"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
-                      </svg>
-                    ) : (
-                      <svg
-                        aria-hidden="true"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      >
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9Z" />
-                      </svg>
-                    )}
-                    {social.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10 md:p-8">
-              <ContactForm />
-            </div>
-          </Reveal>
-        </div>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   )

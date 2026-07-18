@@ -5,8 +5,9 @@ Developer & Computer Educator — built with **React 19 + TypeScript + Vite**,
 **Tailwind CSS v4**, **Framer Motion**, and **react-i18next**.
 
 Seven sections: Hero, About, Skills, Projects, Certificates (scroll-snap
-carousel), Activity Gallery, and a validated Contact form — all text driven by
-JSON dictionaries, no hardcoded strings.
+carousel), Activity Gallery, and a Contact section with direct channels
+(email, phone, LINE, socials) — all text driven by JSON dictionaries, no
+hardcoded strings.
 
 ## Quick start
 
@@ -31,7 +32,7 @@ src/
 ├── i18n/            # i18next init + locales/en.json + locales/th.json
 ├── config/site.ts   # single source for name/email/socials/resume URL
 ├── data/            # typed content data (ids, image paths, tech, dates) — no display text
-├── lib/             # pure logic (validateContact) — fully unit-tested
+├── lib/             # shared logic (useMarqueeDrift carousel hook)
 ├── components/      # sections + ui/ primitives (SectionHeading, Badge, Reveal)
 └── test/setup.ts    # jsdom stubs (IntersectionObserver/ResizeObserver/matchMedia)
 ```
@@ -47,9 +48,8 @@ src/
 - **Motion respects users** — every reveal/zoom goes through
   `MotionConfig reducedMotion="user"` or `motion-safe:` variants; Thai text is
   never letter-spaced.
-- **Explicit UI states** — the contact form implements
-  idle/submitting/success/error with localized `role="alert"` errors; every
-  image has an `onError` neutral fallback.
+- **Defensive images** — every content image attaches an `onError` neutral
+  fallback, so a missing file never shows a broken icon.
 
 ## Make it yours
 
@@ -59,9 +59,8 @@ src/
 | Certificates        | Drop **any number** of images into `src/assets/certificates/` named `YYYY-MM Certificate name.jpg` (e.g. `2025-01 Regional AI Award.jpg`) — issue date and name come from the filename; Thai filenames work. No date prefix = name-only card. A `certificates.items.<id>.name` translation overrides the display name. |
 | Profile & projects  | Replace `public/images/profile/profile.jpg`, `public/images/education/graduation.jpg`, and `public/images/projects/project-*.svg` keeping the filenames (or update the paths in `src/data/projects.ts` / `Hero.tsx` / `Education.tsx`). |
 | Resume              | Overwrite `public/resume.pdf` with the real file.                                        |
-| Email / socials     | `src/config/site.ts` — GitHub, LinkedIn, and W3Profile links live here.                  |
+| Contact channels    | `src/config/site.ts` — email, phone, LINE id, and every social URL in one place. |
 | Wording             | `src/i18n/locales/en.json` + `th.json` — always edit **both**; `npm test` enforces parity. |
-| Form backend        | `src/components/ContactForm.tsx` → `simulateSubmit` is the documented extension point for Formspree/EmailJS/your API. |
 
 > ✅ **Thai name spelling verified** — "สุรชา หาญธงชัย" was confirmed against
 > the owner's official award certificates (2026-07-18), resolving spec
@@ -69,11 +68,11 @@ src/
 
 ## Testing
 
-45 tests cover: locale key parity + non-empty values, i18n detection config,
-language switching (html lang + localStorage), navbar/mobile menu behavior,
-hero CTAs, exact skill badges, project cards (noopener links, image-error
-fallback), carousel arrows + Buddhist-era Thai dates, gallery alt text, every
-branch of `validateContact`, all four contact-form states (in both languages),
+The test suite covers: locale key parity + non-empty values, i18n detection
+config, language switching (html lang + localStorage), navbar/mobile menu
+behavior, hero CTAs, skill badges, education entries, project cards
+(noopener links, image-error fallback), carousel arrows + Buddhist-era Thai
+dates, gallery alt text, contact channel links (mailto/tel/LINE/socials),
 and a full-app bilingual smoke test.
 
 ## AI disclosure
@@ -89,7 +88,5 @@ placeholders for the owner to review and correct.
 ## Known limitations
 
 - Placeholder SVG images and a placeholder resume PDF ship by default.
-- The contact form simulates submission client-side (no backend); typing a
-  message containing the word "error" demonstrates the failure state.
 - "View Details" project links point to the GitHub profile until real
   project URLs exist.

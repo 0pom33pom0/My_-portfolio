@@ -92,30 +92,16 @@
   "contact": {
     "eyebrow": "Contact",
     "heading": "Get in Touch",
-    "intro": "Have a project, a class, or an idea to talk about? Send a message — I usually reply within a day or two.",
-    "directHeading": "Direct contact",
-    "form": {
-      "labels": {
-        "name": "Name",
-        "email": "Email",
-        "message": "Message"
-      },
-      "placeholders": {
-        "name": "Your name",
-        "email": "you@example.com",
-        "message": "Tell me about your project or question…"
-      },
-      "submit": "Send Message",
-      "submitting": "Sending…",
-      "success": "Thanks! Your message has been sent — I'll get back to you soon.",
-      "error": "Something went wrong while sending. Please try again.",
-      "errors": {
-        "nameRequired": "Please enter your name",
-        "emailRequired": "Please enter your email",
-        "emailInvalid": "Please enter a valid email address",
-        "messageRequired": "Please enter a message",
-        "messageTooShort": "Message must be at least 10 characters"
-      }
+    "intro": "Have a project, a class, or an idea to talk about? Reach me through whichever channel is easiest — I usually reply within a day or two.",
+    "channels": {
+      "email": "Email",
+      "phone": "Phone",
+      "line": "LINE",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "w3profile": "W3Profile"
     }
   },
   "footer": {
