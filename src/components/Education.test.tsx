@@ -19,6 +19,7 @@ describe('Education section', () => {
     expect(screen.getByText(item.field)).toBeInTheDocument()
     expect(screen.getByText(item.period)).toBeInTheDocument()
     expect(screen.getByText(item.honor)).toBeInTheDocument()
+    expect(screen.getByAltText(item.imageAlt)).toBeInTheDocument()
   })
 
   it('renders localized content in Thai', async () => {

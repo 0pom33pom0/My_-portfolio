@@ -80,8 +80,8 @@ export function Hero() {
             <img
               src="/images/profile/profile.jpg"
               alt={t('hero.imageAlt')}
-              width={900}
-              height={1350}
+              width={640}
+              height={960}
               onError={() => setImageFailed(true)}
               className="mx-auto w-full max-w-sm rounded-3xl shadow-2xl ring-1 ring-white/10"
             />
