@@ -1,13 +1,17 @@
 import {
   siClaude,
+  siCplusplus,
   siDelphi,
+  siDotnet,
   siFlutter,
   siGithub,
   siGitlab,
   siGo,
   siGooglegemini,
+  siLua,
   siLuau,
   siNextdotjs,
+  siPython,
   siReact,
   siRobloxstudio,
   siTailwindcss,
@@ -26,6 +30,10 @@ const SPARKLE_PATH =
   'M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2Zm7 12 1.1 2.9L23 18l-2.9 1.1L19 22l-1.1-2.9L15 18l2.9-1.1L19 14Z'
 const MOUNTAIN_PATH =
   'M14.2 6.2 21.8 20H2.2L8.6 8.4l2.5 4.5 3.1-6.7ZM8.6 12.6 5.6 18h11.9l-3.4-6.2-1.6 3.4-1.5-2.6-2.4 0Z'
+const CHAT_SPARKLE_PATH =
+  'M12 3C6.5 3 2 6.9 2 11.7c0 2.8 1.5 5.3 3.9 6.9L5 22l4.3-1.9c.9.2 1.8.3 2.7.3 5.5 0 10-3.9 10-8.7S17.5 3 12 3Zm0 3.2 1.5 3.9 3.9 1.5-3.9 1.5-1.5 3.9-1.5-3.9-3.9-1.5 3.9-1.5L12 6.2Z'
+const STARBURST_PATH =
+  'M11 2h2v6.6l4.7-4.7 1.4 1.4L14.4 10H21v2h-6.6l4.7 4.7-1.4 1.4L13 13.4V20h-2v-6.6l-4.7 4.7-1.4-1.4L9.6 12H3v-2h6.6L4.9 5.3l1.4-1.4L11 8.6V2Z'
 
 /**
  * Brand icons keyed by the EXACT badge strings used in src/data.
@@ -42,9 +50,17 @@ export const techIcons: Record<string, TechIcon> = {
   Claude: { path: siClaude.path, color: `#${siClaude.hex}` },
   Gemini: { path: siGooglegemini.path, color: `#${siGooglegemini.hex}` },
   MedGemma: { path: SPARKLE_PATH, color: '#4285F4' },
+  // No OpenAI/Zhipu marks in simple-icons (brand policy) — generic marks.
+  ChatGPT: { path: CHAT_SPARKLE_PATH, color: '#74AA9C' },
+  GLM: { path: STARBURST_PATH, color: '#5B8CFF' },
   GitHub: { path: siGithub.path, color: '#ffffff' },
   GitLab: { path: siGitlab.path, color: `#${siGitlab.hex}` },
   Taiga: { path: MOUNTAIN_PATH, color: '#9DCE0A' },
+  Python: { path: siPython.path, color: `#${siPython.hex}` },
+  'C++': { path: siCplusplus.path, color: '#659AD2' },
+  // simple-icons has no C# mark; the .NET logo is the closest recognizable one.
+  'C#': { path: siDotnet.path, color: '#A489F5' },
+  Lua: { path: siLua.path, color: '#7E9BFF' },
   'Roblox Studio': { path: siRobloxstudio.path, color: `#${siRobloxstudio.hex}` },
   Luau: { path: siLuau.path, color: `#${siLuau.hex}` },
 }

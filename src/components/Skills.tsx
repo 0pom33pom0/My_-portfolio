@@ -17,7 +17,7 @@ export function Skills() {
             title={t('skills.heading')}
           />
         </Reveal>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
             <Reveal key={category.id} delay={index * 0.1}>
               <div className="h-full rounded-2xl bg-white/[0.03] p-6 ring-1 ring-white/10">

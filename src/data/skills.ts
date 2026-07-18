@@ -10,8 +10,12 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Go', 'SQL', 'Object Pascal (Delphi)'],
   },
   {
+    id: 'languages',
+    skills: ['Python', 'C++', 'C#', 'Lua'],
+  },
+  {
     id: 'ai',
-    skills: ['Claude', 'Gemini', 'MedGemma'],
+    skills: ['Claude', 'Gemini', 'MedGemma', 'ChatGPT', 'GLM'],
   },
   {
     id: 'tools',
