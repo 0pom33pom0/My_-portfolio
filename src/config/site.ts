@@ -2,7 +2,7 @@ import type { SiteConfig } from '../data/types.ts'
 
 export const site: SiteConfig = {
   name: 'Suracha Hanthongchai',
-  email: 'niponyochram@gmail.com',
+  email: 'suracha.h@kkumail.com',
   githubUrl: 'https://github.com/0pom33pom0',
   linkedinUrl: 'https://www.linkedin.com/in/suracha-hanthongchai-885647420/',
   resumeUrl: '/resume.pdf',
