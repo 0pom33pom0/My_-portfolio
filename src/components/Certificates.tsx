@@ -45,6 +45,16 @@ export function Certificates() {
     let wrapAt = 0
     let pointerInside = false
     let focusInside = false
+    // Drift only once the visitor has actually scrolled the carousel
+    // into view; stops again when it leaves the viewport.
+    let inView = false
+
+    const viewObserver = new IntersectionObserver(
+      (entries) => {
+        inView = entries[0]?.isIntersecting ?? false
+      },
+      { threshold: 0.25 },
+    )
 
     const measure = () => {
       const firstClone = scroller.querySelector<HTMLElement>('[data-clone]')
@@ -52,6 +62,7 @@ export function Certificates() {
     }
 
     const isPaused = () =>
+      !inView ||
       pointerInside ||
       focusInside ||
       performance.now() < suspendUntilRef.current ||
@@ -90,6 +101,7 @@ export function Certificates() {
     const onManualScrollIntent = () => suspendDrift()
 
     measure()
+    viewObserver.observe(scroller)
     scroller.addEventListener('pointerenter', onPointerEnter)
     scroller.addEventListener('pointerleave', onPointerLeave)
     scroller.addEventListener('focusin', onFocusIn)
@@ -103,6 +115,7 @@ export function Certificates() {
 
     return () => {
       cancelAnimationFrame(frame)
+      viewObserver.disconnect()
       scroller.style.scrollSnapType = ''
       scroller.removeEventListener('pointerenter', onPointerEnter)
       scroller.removeEventListener('pointerleave', onPointerLeave)
