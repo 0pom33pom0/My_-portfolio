@@ -20,5 +20,5 @@
   <circle cx="450" cy="540" r="24" fill="#2a303c"/>
   <circle cx="610" cy="520" r="24" fill="#2a303c"/>
   <rect x="270" y="560" width="360" height="12" rx="6" fill="#1b202b"/>
-  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">public/images/gallery/gallery-05.svg - hackathon coaching</text>
+  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">src/assets/gallery/gallery-05.svg - hackathon coaching</text>
 </svg>

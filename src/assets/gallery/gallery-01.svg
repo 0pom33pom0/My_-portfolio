@@ -19,5 +19,5 @@
   <rect x="190" y="324" width="320" height="12" rx="6" fill="#2a303c"/>
   <circle cx="700" cy="380" r="52" fill="url(#ac)" opacity="0.85"/>
   <path d="M610 560 C 625 460 775 460 790 560 Z" fill="url(#ac)" opacity="0.55"/>
-  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">public/images/gallery/gallery-01.svg - teaching</text>
+  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">src/assets/gallery/gallery-01.svg - teaching</text>
 </svg>
