@@ -97,7 +97,7 @@ export function Certificates() {
             <ul className="flex w-max gap-5">
               {certificates.map((certificate) => (
                 <li
-                  key={certificate.id}
+                  key={certificate.image}
                   className="w-[80vw] max-w-sm shrink-0 snap-start sm:w-[360px]"
                 >
                   <CertificateCard certificate={certificate} />
