@@ -77,7 +77,7 @@ export function Hero() {
             />
           ) : (
             <img
-              src="/images/profile.svg"
+              src="/images/profile/profile.svg"
               alt={t('hero.imageAlt')}
               width={800}
               height={1000}

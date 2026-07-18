@@ -55,7 +55,7 @@ src/
 
 | What                | Where                                                                                   |
 | ------------------- | --------------------------------------------------------------------------------------- |
-| Photos & images     | Replace files in `public/images/` **keeping the same filenames** (`profile.svg`, `project-ehp.svg`, `gallery-01.svg`, …). Any raster format works if you keep the name — or update the paths in `src/data/*.ts`. |
+| Photos & images     | Drop files into the category folders — `public/images/profile/`, `public/images/projects/`, `public/images/certificates/`, `public/images/gallery/` — **keeping the same filenames** (`profile.svg`, `project-ehp.svg`, `gallery-01.svg`, …). Any raster format works if you keep the name — or update the paths in `src/data/*.ts`. |
 | Resume              | Overwrite `public/resume.pdf` with the real file.                                        |
 | Email / socials     | `src/config/site.ts` (LinkedIn URL is currently a placeholder).                          |
 | Wording             | `src/i18n/locales/en.json` + `th.json` — always edit **both**; `npm test` enforces parity. |

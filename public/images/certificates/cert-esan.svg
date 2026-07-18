@@ -21,5 +21,5 @@
   <circle cx="620" cy="390" r="20" fill="url(#ac)" opacity="0.9"/>
   <rect x="120" y="420" width="180" height="10" rx="5" fill="#2a303c"/>
   <rect x="120" y="444" width="140" height="10" rx="5" fill="#2a303c"/>
-  <text x="80" y="572" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#8b93a3">cert-esan.svg - E-SAN coding and AI academy</text>
+  <text x="80" y="572" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#8b93a3">public/images/certificates/cert-esan.svg - E-SAN coding and AI academy</text>
 </svg>

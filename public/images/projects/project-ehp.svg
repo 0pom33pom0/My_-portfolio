@@ -23,5 +23,5 @@
     fill="none" stroke="url(#ac)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   <rect x="770" y="230" width="56" height="20" rx="6" fill="#2dd4bf" opacity="0.9"/>
   <rect x="788" y="212" width="20" height="56" rx="6" fill="#2dd4bf" opacity="0.9"/>
-  <text x="48" y="700" font-family="ui-monospace, Menlo, monospace" font-size="26" fill="#8b93a3">public/images/project-ehp.svg - swap with a real screenshot</text>
+  <text x="48" y="700" font-family="ui-monospace, Menlo, monospace" font-size="26" fill="#8b93a3">public/images/projects/project-ehp.svg - swap with a real screenshot</text>
 </svg>

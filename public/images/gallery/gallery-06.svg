@@ -22,5 +22,5 @@
   <circle cx="300" cy="520" r="24" fill="#2a303c"/>
   <circle cx="450" cy="540" r="24" fill="#2a303c"/>
   <circle cx="600" cy="520" r="24" fill="#2a303c"/>
-  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">gallery-06.svg - award ceremony</text>
+  <text x="48" y="630" font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b93a3">public/images/gallery/gallery-06.svg - award ceremony</text>
 </svg>

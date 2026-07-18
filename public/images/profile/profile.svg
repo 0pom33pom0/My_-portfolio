@@ -17,5 +17,5 @@
   <circle cx="400" cy="430" r="270" fill="none" stroke="url(#ac)" stroke-opacity="0.5" stroke-width="3" stroke-dasharray="10 14"/>
   <circle cx="400" cy="390" r="140" fill="url(#ac)" opacity="0.85"/>
   <path d="M150 900 C 190 660 610 660 650 900 L 150 900 Z" fill="url(#ac)" opacity="0.55"/>
-  <text x="48" y="962" font-family="ui-monospace, Menlo, monospace" font-size="24" fill="#8b93a3">public/images/profile.svg - swap with a real photo</text>
+  <text x="48" y="962" font-family="ui-monospace, Menlo, monospace" font-size="24" fill="#8b93a3">public/images/profile/profile.svg - swap with a real photo</text>
 </svg>

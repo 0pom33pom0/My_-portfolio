@@ -21,5 +21,5 @@
   <path d="M610 362 L621 388 L649 390 L627 408 L634 436 L610 421 L586 436 L593 408 L571 390 L599 388 Z" fill="url(#ac)" opacity="0.9"/>
   <rect x="120" y="420" width="180" height="10" rx="5" fill="#2a303c"/>
   <rect x="120" y="444" width="140" height="10" rx="5" fill="#2a303c"/>
-  <text x="80" y="572" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#8b93a3">cert-arduino.svg - Arduino robotics coach</text>
+  <text x="80" y="572" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#8b93a3">public/images/certificates/cert-arduino.svg - Arduino robotics coach</text>
 </svg>
