@@ -55,17 +55,7 @@
     "eyebrow": "Credentials",
     "heading": "Certificates & Awards",
     "issued": "Issued {{date}}",
-    "items": {
-      "arduino": {
-        "name": "Regional Arduino Robotics Coach"
-      },
-      "esan": {
-        "name": "E-SAN Thailand Coding & AI Academy"
-      },
-      "webcomp": {
-        "name": "Web Application Competition Award"
-      }
-    }
+    "items": {}
   },
   "gallery": {
     "eyebrow": "Beyond the Keyboard",

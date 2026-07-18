@@ -55,17 +55,7 @@
     "eyebrow": "การรับรองและรางวัล",
     "heading": "เกียรติบัตรและรางวัล",
     "issued": "ออกให้เมื่อ {{date}}",
-    "items": {
-      "arduino": {
-        "name": "โค้ชหุ่นยนต์ Arduino ระดับภูมิภาค"
-      },
-      "esan": {
-        "name": "E-SAN Thailand Coding & AI Academy"
-      },
-      "webcomp": {
-        "name": "รางวัลการแข่งขันเว็บแอปพลิเคชัน"
-      }
-    }
+    "items": {}
   },
   "gallery": {
     "eyebrow": "นอกจากหน้าจอ",

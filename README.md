@@ -93,4 +93,3 @@ placeholders for the owner to review and correct.
   message containing the word "error" demonstrates the failure state.
 - "View Details" project links point to the GitHub profile until real
   project URLs exist.
-- Certificate issue dates are mock values.

@@ -32,16 +32,12 @@ describe('Certificates carousel (FR-016, auto-discovered)', () => {
     ).toBeInTheDocument()
   })
 
-  it('shows localized names for certificates that have translation keys', () => {
+  it('shows each certificate name — translation key when present, else the filename-derived name', () => {
     render(<Certificates />)
-    const keyed = certificates.filter((certificate) => enNames[certificate.id])
-    expect(keyed.length).toBeGreaterThan(0)
-    for (const certificate of keyed) {
+    for (const certificate of certificates) {
+      const expected = enNames[certificate.id]?.name ?? certificate.fallbackName
       expect(
-        screen.getByRole('heading', {
-          level: 3,
-          name: enNames[certificate.id].name,
-        }),
+        screen.getByRole('heading', { level: 3, name: expected }),
       ).toBeInTheDocument()
     }
   })
