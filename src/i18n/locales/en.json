@@ -132,6 +132,9 @@
     "switchToThai": "Switch to Thai",
     "certificatesCarousel": "Certificates carousel",
     "prevCertificate": "Previous certificate",
-    "nextCertificate": "Next certificate"
+    "nextCertificate": "Next certificate",
+    "galleryCarousel": "Activity photos carousel",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo"
   }
 }

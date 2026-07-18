@@ -132,6 +132,9 @@
     "switchToThai": "เปลี่ยนเป็นภาษาไทย",
     "certificatesCarousel": "แถบเลื่อนเกียรติบัตร",
     "prevCertificate": "เกียรติบัตรก่อนหน้า",
-    "nextCertificate": "เกียรติบัตรถัดไป"
+    "nextCertificate": "เกียรติบัตรถัดไป",
+    "galleryCarousel": "แถบเลื่อนภาพกิจกรรม",
+    "prevPhoto": "ภาพก่อนหน้า",
+    "nextPhoto": "ภาพถัดไป"
   }
 }

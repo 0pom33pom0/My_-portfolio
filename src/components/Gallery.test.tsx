@@ -8,19 +8,29 @@ import { Gallery } from './Gallery.tsx'
 const enCaptions = en.gallery.items as Record<string, { caption: string }>
 const thCaptions = th.gallery.items as Record<string, { caption: string }>
 
-describe('Gallery (FR-017, auto-discovered photos)', () => {
+describe('Gallery marquee (FR-017, auto-discovered photos)', () => {
   beforeEach(async () => {
     await i18n.changeLanguage('en')
   })
 
-  it('renders one image per discovered photo, each with an accessible name', () => {
+  it('renders one visible slide per discovered photo inside a labeled region', () => {
     render(<Gallery />)
     expect(galleryItems.length).toBeGreaterThan(0)
+    // Clones are aria-hidden, so role queries only see the real set.
     const images = screen.getAllByRole('img')
     expect(images).toHaveLength(galleryItems.length)
     for (const image of images) {
       expect(image).toHaveAccessibleName()
     }
+    expect(
+      screen.getByRole('region', { name: en.a11y.galleryCarousel }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: en.a11y.nextPhoto }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: en.a11y.prevPhoto }),
+    ).toBeInTheDocument()
   })
 
   it('uses the localized caption when the filename has one', () => {
@@ -29,18 +39,21 @@ describe('Gallery (FR-017, auto-discovered photos)', () => {
     expect(keyed.length).toBeGreaterThan(0)
     for (const item of keyed) {
       expect(
-        screen.getByAltText(enCaptions[item.id].caption),
-      ).toBeInTheDocument()
+        screen.getAllByAltText(enCaptions[item.id].caption).length,
+      ).toBeGreaterThan(0)
     }
   })
 
-  it('localizes captions in Thai', async () => {
+  it('localizes captions and controls in Thai', async () => {
     await i18n.changeLanguage('th')
     render(<Gallery />)
     for (const item of galleryItems.filter((item) => thCaptions[item.id])) {
       expect(
-        screen.getByAltText(thCaptions[item.id].caption),
-      ).toBeInTheDocument()
+        screen.getAllByAltText(thCaptions[item.id].caption).length,
+      ).toBeGreaterThan(0)
     }
+    expect(
+      screen.getByRole('region', { name: th.a11y.galleryCarousel }),
+    ).toBeInTheDocument()
   })
 })

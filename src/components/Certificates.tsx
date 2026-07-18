@@ -1,26 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { certificates } from '../data/certificates.ts'
+import { useMarqueeDrift } from '../lib/useMarqueeDrift.ts'
 import { CertificateCard } from './CertificateCard.tsx'
+import { CarouselArrows } from './ui/CarouselArrows.tsx'
 import { Reveal } from './ui/Reveal.tsx'
 import { SectionHeading } from './ui/SectionHeading.tsx'
 
 const FALLBACK_SCROLL_STEP = 320
-const DRIFT_PX_PER_FRAME = 0.6
-const INTERACTION_SUSPEND_MS = 4000
 
 const SLIDE_CLASS = 'w-[80vw] max-w-sm shrink-0 snap-start sm:w-[360px]'
 
 export function Certificates() {
   const { t } = useTranslation()
   const scrollerRef = useRef<HTMLDivElement>(null)
-  const suspendUntilRef = useRef(0)
   const prefersReducedMotion = useReducedMotion()
-
-  const suspendDrift = () => {
-    suspendUntilRef.current = performance.now() + INTERACTION_SUSPEND_MS
-  }
+  const { suspendDrift } = useMarqueeDrift(scrollerRef, {
+    enabled: !prefersReducedMotion,
+  })
 
   const scrollByCard = (direction: 1 | -1) => {
     const scroller = scrollerRef.current
@@ -34,101 +32,6 @@ export function Certificates() {
       behavior: prefersReducedMotion ? 'auto' : 'smooth',
     })
   }
-
-  // Slow continuous drift through the (cloned) list; wraps seamlessly and
-  // yields to the visitor: pauses on hover/focus/touch and after arrows.
-  useEffect(() => {
-    const scroller = scrollerRef.current
-    if (!scroller || prefersReducedMotion) return
-
-    let frame = 0
-    let wrapAt = 0
-    let pointerInside = false
-    let focusInside = false
-    // Drift only once the visitor has actually scrolled the carousel
-    // into view; stops again when it leaves the viewport.
-    let inView = false
-
-    const viewObserver = new IntersectionObserver(
-      (entries) => {
-        inView = entries[0]?.isIntersecting ?? false
-      },
-      { threshold: 0.25 },
-    )
-
-    const measure = () => {
-      const firstClone = scroller.querySelector<HTMLElement>('[data-clone]')
-      wrapAt = firstClone ? firstClone.offsetLeft : 0
-    }
-
-    const isPaused = () =>
-      !inView ||
-      pointerInside ||
-      focusInside ||
-      performance.now() < suspendUntilRef.current ||
-      document.visibilityState === 'hidden'
-
-    const tick = () => {
-      if (wrapAt > 0 && !isPaused()) {
-        // Mandatory snap would yank each tiny programmatic step back to the
-        // nearest snap point; disable it while drifting, restore on pause so
-        // manual swiping keeps its snap feel.
-        if (scroller.style.scrollSnapType !== 'none') {
-          scroller.style.scrollSnapType = 'none'
-        }
-        scroller.scrollLeft += DRIFT_PX_PER_FRAME
-        if (scroller.scrollLeft >= wrapAt) {
-          scroller.scrollLeft -= wrapAt
-        }
-      } else if (scroller.style.scrollSnapType) {
-        scroller.style.scrollSnapType = ''
-      }
-      frame = requestAnimationFrame(tick)
-    }
-
-    const onPointerEnter = () => {
-      pointerInside = true
-    }
-    const onPointerLeave = () => {
-      pointerInside = false
-    }
-    const onFocusIn = () => {
-      focusInside = true
-    }
-    const onFocusOut = () => {
-      focusInside = false
-    }
-    const onManualScrollIntent = () => suspendDrift()
-
-    measure()
-    viewObserver.observe(scroller)
-    scroller.addEventListener('pointerenter', onPointerEnter)
-    scroller.addEventListener('pointerleave', onPointerLeave)
-    scroller.addEventListener('focusin', onFocusIn)
-    scroller.addEventListener('focusout', onFocusOut)
-    scroller.addEventListener('touchstart', onManualScrollIntent, {
-      passive: true,
-    })
-    scroller.addEventListener('wheel', onManualScrollIntent, { passive: true })
-    window.addEventListener('resize', measure)
-    frame = requestAnimationFrame(tick)
-
-    return () => {
-      cancelAnimationFrame(frame)
-      viewObserver.disconnect()
-      scroller.style.scrollSnapType = ''
-      scroller.removeEventListener('pointerenter', onPointerEnter)
-      scroller.removeEventListener('pointerleave', onPointerLeave)
-      scroller.removeEventListener('focusin', onFocusIn)
-      scroller.removeEventListener('focusout', onFocusOut)
-      scroller.removeEventListener('touchstart', onManualScrollIntent)
-      scroller.removeEventListener('wheel', onManualScrollIntent)
-      window.removeEventListener('resize', measure)
-    }
-  }, [prefersReducedMotion])
-
-  const arrowButtonClass =
-    'grid h-11 w-11 place-items-center rounded-full text-zinc-200 ring-1 ring-white/15 transition hover:bg-white/5 hover:ring-teal-300/40'
 
   return (
     <section
@@ -144,48 +47,12 @@ export function Certificates() {
               eyebrow={t('certificates.eyebrow')}
               title={t('certificates.heading')}
             />
-            <div className="mb-10 flex gap-2 md:mb-14">
-              <button
-                type="button"
-                aria-label={t('a11y.prevCertificate')}
-                onClick={() => scrollByCard(-1)}
-                className={arrowButtonClass}
-              >
-                <svg
-                  aria-hidden="true"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M15 6l-6 6 6 6" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                aria-label={t('a11y.nextCertificate')}
-                onClick={() => scrollByCard(1)}
-                className={arrowButtonClass}
-              >
-                <svg
-                  aria-hidden="true"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M9 6l6 6-6 6" />
-                </svg>
-              </button>
-            </div>
+            <CarouselArrows
+              prevLabel={t('a11y.prevCertificate')}
+              nextLabel={t('a11y.nextCertificate')}
+              onPrev={() => scrollByCard(-1)}
+              onNext={() => scrollByCard(1)}
+            />
           </div>
         </Reveal>
         <Reveal delay={0.1}>
