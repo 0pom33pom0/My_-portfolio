@@ -7,11 +7,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: 'backend',
-    skills: ['Go', 'SQL', 'Object Pascal (Delphi)'],
+    skills: ['Go', 'SQL'],
   },
   {
     id: 'languages',
-    skills: ['Python', 'C++', 'C#', 'Lua'],
+    skills: ['Dart', 'Python', 'C++', 'C#', 'Lua', 'Object Pascal (Delphi)'],
   },
   {
     id: 'ai',

@@ -1,6 +1,7 @@
 import {
   siClaude,
   siCplusplus,
+  siDart,
   siDelphi,
   siDotnet,
   siFlutter,
@@ -56,6 +57,7 @@ export const techIcons: Record<string, TechIcon> = {
   GitHub: { path: siGithub.path, color: '#ffffff' },
   GitLab: { path: siGitlab.path, color: `#${siGitlab.hex}` },
   Taiga: { path: MOUNTAIN_PATH, color: '#9DCE0A' },
+  Dart: { path: siDart.path, color: '#41C4FF' },
   Python: { path: siPython.path, color: `#${siPython.hex}` },
   'C++': { path: siCplusplus.path, color: '#659AD2' },
   // simple-icons has no C# mark; the .NET logo is the closest recognizable one.
