@@ -44,7 +44,10 @@ describe('App smoke (FR-001/002/009/013/023)', () => {
       expect(container.querySelector(`#${id}`)).not.toBeNull()
     }
     expect(
-      screen.getByRole('heading', { level: 1, name: en.hero.title }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: `${en.hero.greeting} ${en.hero.name}`,
+      }),
     ).toBeInTheDocument()
     for (const section of SECTION_HEADINGS) {
       expect(
@@ -70,7 +73,10 @@ describe('App smoke (FR-001/002/009/013/023)', () => {
 
     expect(document.documentElement.lang).toBe('th')
     expect(
-      screen.getByRole('heading', { level: 1, name: th.hero.title }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: `${th.hero.greeting} ${th.hero.name}`,
+      }),
     ).toBeInTheDocument()
     for (const section of SECTION_HEADINGS) {
       expect(

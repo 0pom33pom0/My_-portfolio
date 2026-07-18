@@ -12,7 +12,10 @@ describe('Hero (FR-010/011/012)', () => {
   it('renders the exact localized headline, role line, and subtitle', () => {
     render(<Hero />)
     expect(
-      screen.getByRole('heading', { level: 1, name: en.hero.title }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: `${en.hero.greeting} ${en.hero.name}`,
+      }),
     ).toBeInTheDocument()
     expect(screen.getByText(en.hero.role)).toBeInTheDocument()
     expect(screen.getByText(en.hero.subtitle)).toBeInTheDocument()
@@ -23,7 +26,10 @@ describe('Hero (FR-010/011/012)', () => {
     await i18n.changeLanguage('th')
     render(<Hero />)
     expect(
-      screen.getByRole('heading', { level: 1, name: th.hero.title }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: `${th.hero.greeting} ${th.hero.name}`,
+      }),
     ).toBeInTheDocument()
     expect(screen.getByText(th.hero.role)).toBeInTheDocument()
   })

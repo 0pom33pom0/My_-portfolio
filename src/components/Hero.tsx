@@ -26,7 +26,8 @@ export function Hero() {
             id="hero-title"
             className="text-4xl leading-tight font-bold tracking-tight md:text-5xl"
           >
-            {t('hero.title')}
+            <span className="block">{t('hero.greeting')}</span>{' '}
+            {t('hero.name')}
           </h1>
           <p className="font-heading mt-4 bg-gradient-to-r from-teal-300 to-sky-400 bg-clip-text text-xl font-medium text-transparent md:text-2xl">
             {t('hero.role')}

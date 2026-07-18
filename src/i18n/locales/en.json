@@ -9,7 +9,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Hi, I'm Suracha Hanthongchai (Pom Pam)",
+    "greeting": "Hi,",
+    "name": "I'm Suracha Hanthongchai (Pom Pam)",
     "role": "Software Developer & Computer Educator",
     "subtitle": "I build scalable applications and healthcare software, and I weave AI into real-world workflows — from hospital systems to the classroom.",
     "downloadResume": "Download Resume",
