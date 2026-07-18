@@ -23,7 +23,8 @@
     "eyebrow": "Who I Am",
     "heading": "About Me",
     "bio1": "I'm a software developer and computer educator based in Thailand. My core work is healthcare software — designing and maintaining EHP hospital modules that clinicians rely on every day — alongside full-stack development with React, Go, and SQL.",
-    "bio2": "Outside production code, I teach computer science, coach student robotics teams, and speak about practical AI adoption. I believe great software starts with understanding real users, and the best classrooms are the ones where students ship real projects."
+    "bio2": "Outside production code, I teach computer science, coach student robotics teams, and speak about practical AI adoption. I believe great software starts with understanding real users, and the best classrooms are the ones where students ship real projects.",
+    "quote": "You say it can't be done — have you tried?"
   },
   "education": {
     "eyebrow": "Academic Background",

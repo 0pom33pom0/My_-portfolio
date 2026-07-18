@@ -57,6 +57,7 @@ describe('App smoke (FR-001/002/009/013/023)', () => {
       ).toBeInTheDocument()
     }
     expect(screen.getByText(en.about.bio1)).toBeInTheDocument()
+    expect(screen.getByText(en.about.quote, { exact: false })).toBeInTheDocument()
     expect(
       screen.getByText(
         new RegExp(`© ${new Date().getFullYear()} Suracha Hanthongchai`),

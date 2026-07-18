@@ -21,6 +21,13 @@ export function About() {
             <p>{t('about.bio2')}</p>
           </div>
         </Reveal>
+        <Reveal delay={0.2}>
+          <blockquote className="mt-10 max-w-3xl border-l-2 border-teal-300/60 pl-6 md:mt-12">
+            <p className="font-heading bg-gradient-to-r from-teal-200 to-sky-300 bg-clip-text text-2xl leading-snug font-semibold text-transparent md:text-3xl">
+              “{t('about.quote')}”
+            </p>
+          </blockquote>
+        </Reveal>
       </div>
     </section>
   )
