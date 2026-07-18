@@ -10,10 +10,12 @@ describe('Skills (FR-014, AC-4.2)', () => {
     await i18n.changeLanguage('en')
   })
 
-  it('renders exactly three categories with localized titles and the exact badges', () => {
+  it('renders every category with localized titles and the exact badges', () => {
     render(<Skills />)
 
-    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(3)
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(
+      skillCategories.length,
+    )
     for (const category of skillCategories) {
       expect(
         screen.getByRole('heading', {

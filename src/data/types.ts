@@ -1,5 +1,5 @@
 export interface SkillCategory {
-  id: 'frontend' | 'backend' | 'ai'
+  id: 'frontend' | 'backend' | 'ai' | 'tools'
   skills: string[]
 }
 

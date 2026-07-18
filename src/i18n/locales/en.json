@@ -53,7 +53,8 @@
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend & Database",
-      "ai": "AI Tools"
+      "ai": "AI Tools",
+      "tools": "Dev & Collaboration Tools"
     }
   },
   "projects": {

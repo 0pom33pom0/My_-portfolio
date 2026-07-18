@@ -13,4 +13,8 @@ export const skillCategories: SkillCategory[] = [
     id: 'ai',
     skills: ['Claude', 'Gemini', 'MedGemma'],
   },
+  {
+    id: 'tools',
+    skills: ['GitHub', 'GitLab', 'Taiga'],
+  },
 ]
