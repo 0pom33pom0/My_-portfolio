@@ -78,14 +78,7 @@
     "eyebrow": "Beyond the Keyboard",
     "heading": "Activity Gallery",
     "defaultCaption": "Activity photo {{number}}",
-    "items": {
-      "gallery-01": { "caption": "Teaching a programming class" },
-      "gallery-02": { "caption": "Mentoring a student robotics team" },
-      "gallery-03": { "caption": "Speaking at a developer meetup" },
-      "gallery-04": { "caption": "Running a coding workshop" },
-      "gallery-05": { "caption": "Coaching a hackathon team" },
-      "gallery-06": { "caption": "Award ceremony with students" }
-    }
+    "items": {}
   },
   "contact": {
     "eyebrow": "Contact",

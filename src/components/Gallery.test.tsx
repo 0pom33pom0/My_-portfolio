@@ -33,24 +33,35 @@ describe('Gallery marquee (FR-017, auto-discovered photos)', () => {
     ).toBeInTheDocument()
   })
 
-  it('uses the localized caption when the filename has one', () => {
+  it('uses a per-file caption when one exists, else the generic localized alt', () => {
     render(<Gallery />)
-    const keyed = galleryItems.filter((item) => enCaptions[item.id])
-    expect(keyed.length).toBeGreaterThan(0)
-    for (const item of keyed) {
+    for (const item of galleryItems.filter((item) => enCaptions[item.id])) {
       expect(
         screen.getAllByAltText(enCaptions[item.id].caption).length,
       ).toBeGreaterThan(0)
     }
+    const uncaptioned = galleryItems.filter((item) => !enCaptions[item.id])
+    if (uncaptioned.length > 0) {
+      const pattern = new RegExp(
+        `^${en.gallery.defaultCaption.replace('{{number}}', '\\d+')}$`,
+      )
+      expect(screen.getAllByAltText(pattern).length).toBeGreaterThanOrEqual(
+        uncaptioned.length,
+      )
+    }
   })
 
-  it('localizes captions and controls in Thai', async () => {
+  it('localizes generic alts and controls in Thai', async () => {
     await i18n.changeLanguage('th')
     render(<Gallery />)
-    for (const item of galleryItems.filter((item) => thCaptions[item.id])) {
-      expect(
-        screen.getAllByAltText(thCaptions[item.id].caption).length,
-      ).toBeGreaterThan(0)
+    const uncaptioned = galleryItems.filter((item) => !thCaptions[item.id])
+    if (uncaptioned.length > 0) {
+      const pattern = new RegExp(
+        `^${th.gallery.defaultCaption.replace('{{number}}', '\\d+')}$`,
+      )
+      expect(screen.getAllByAltText(pattern).length).toBeGreaterThanOrEqual(
+        uncaptioned.length,
+      )
     }
     expect(
       screen.getByRole('region', { name: th.a11y.galleryCarousel }),
