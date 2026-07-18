@@ -12,7 +12,7 @@ JSON dictionaries, no hardcoded strings.
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm run dev        # http://localhost:5176 (fixed port, strictPort)
 ```
 
 | Script              | What it does                                  |
