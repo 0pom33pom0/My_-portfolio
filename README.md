@@ -63,9 +63,9 @@ src/
 | Wording             | `src/i18n/locales/en.json` + `th.json` — always edit **both**; `npm test` enforces parity. |
 | Form backend        | `src/components/ContactForm.tsx` → `simulateSubmit` is the documented extension point for Formspree/EmailJS/your API. |
 
-> ⚠️ **Verify the Thai spelling of the name** — "สุรชา หาญทองชัย" is a
-> best-effort transliteration of "Suracha Hanthongchai" and must be confirmed
-> by the owner (see `specs/001-portfolio-website/spec.md`, Assumption 5).
+> ✅ **Thai name spelling verified** — "สุรชา หาญธงชัย" was confirmed against
+> the owner's official award certificates (2026-07-18), resolving spec
+> Assumption 5.
 
 ## Testing
 
