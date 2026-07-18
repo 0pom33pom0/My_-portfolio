@@ -7,6 +7,7 @@ import { Navbar } from './Navbar.tsx'
 
 const SECTION_IDS = [
   'about',
+  'education',
   'skills',
   'projects',
   'certificates',

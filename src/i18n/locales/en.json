@@ -2,6 +2,7 @@
   "nav": {
     "brand": "Pom Pam",
     "about": "About",
+    "education": "Education",
     "skills": "Skills",
     "projects": "Projects",
     "certificates": "Certificates",
@@ -23,6 +24,19 @@
     "heading": "About Me",
     "bio1": "I'm a software developer and computer educator based in Thailand. My core work is healthcare software — designing and maintaining EHP hospital modules that clinicians rely on every day — alongside full-stack development with React, Go, and SQL.",
     "bio2": "Outside production code, I teach computer science, coach student robotics teams, and speak about practical AI adoption. I believe great software starts with understanding real users, and the best classrooms are the ones where students ship real projects."
+  },
+  "education": {
+    "eyebrow": "Academic Background",
+    "heading": "Education",
+    "items": {
+      "kku": {
+        "degree": "Bachelor of Education (B.Ed.)",
+        "field": "Computer Education, Faculty of Education",
+        "school": "Khon Kaen University",
+        "period": "Academic years 2020 – 2024",
+        "honor": "First-Class Honors (GPA 3.82)"
+      }
+    }
   },
   "skills": {
     "eyebrow": "Toolbox",
