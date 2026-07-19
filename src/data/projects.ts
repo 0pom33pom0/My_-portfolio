@@ -19,4 +19,10 @@ export const projects: Project[] = [
     tech: ['Roblox Studio', 'Luau'],
     link: 'https://github.com/0pom33pom0',
   },
+  {
+    id: 'jo',
+    image: '/images/projects/project-jo.jpg',
+    tech: ['C#', 'WinForms', 'MySQL'],
+    link: 'https://github.com/0pom33pom0/project_jo-C',
+  },
 ]

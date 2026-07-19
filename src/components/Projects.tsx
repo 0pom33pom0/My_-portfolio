@@ -21,7 +21,7 @@ export function Projects() {
             title={t('projects.heading')}
           />
         </Reveal>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.08} className="h-full">
               <ProjectCard project={project} />

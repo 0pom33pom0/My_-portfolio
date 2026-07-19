@@ -39,7 +39,7 @@ describe('Projects (FR-015, FR-024)', () => {
     const links = screen.getAllByRole('link', {
       name: new RegExp(en.projects.viewDetails),
     })
-    expect(links).toHaveLength(3)
+    expect(links).toHaveLength(projects.length)
     links.forEach((link, index) => {
       expect(link).toHaveAttribute('href', projects[index].link)
       expect(link).toHaveAttribute('target', '_blank')

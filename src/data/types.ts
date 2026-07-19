@@ -4,7 +4,7 @@ export interface SkillCategory {
 }
 
 export interface Project {
-  id: 'ehp' | 'metaherb' | 'roblox'
+  id: 'ehp' | 'metaherb' | 'roblox' | 'jo'
   image: string
   tech: string[]
   link: string
