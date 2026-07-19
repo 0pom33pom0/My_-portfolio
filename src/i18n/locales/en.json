@@ -61,7 +61,11 @@
   "projects": {
     "eyebrow": "Selected Work",
     "heading": "Projects",
-    "viewDetails": "View Details",
+    "linkLabels": {
+      "website": "Visit Website",
+      "play": "Play on Roblox",
+      "code": "View Code on GitHub"
+    },
     "items": {
       "ehp": {
         "title": "Healthcare EHP Modules",

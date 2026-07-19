@@ -44,17 +44,27 @@ describe('Projects marquee (FR-015, FR-024)', () => {
     }
   })
 
-  it('View Details links open the configured URL in a new tab with noopener', () => {
+  it('project links say where they go and open safely in a new tab', () => {
     render(<Projects />)
-    const links = screen.getAllByRole('link', {
-      name: new RegExp(en.projects.viewDetails),
-    })
-    expect(links).toHaveLength(projects.length)
-    links.forEach((link, index) => {
-      expect(link).toHaveAttribute('href', projects[index].link)
+    const labels = en.projects.linkLabels as Record<string, string>
+    const linked = projects.filter(
+      (project) => project.link && project.linkType,
+    )
+    expect(linked.length).toBeGreaterThan(0)
+
+    const links = screen.getAllByRole('link')
+    expect(links).toHaveLength(linked.length)
+
+    for (const project of linked) {
+      const link = links.find(
+        (candidate) => candidate.getAttribute('href') === project.link,
+      )
+      expect(link).toBeDefined()
+      if (!link || !project.linkType) continue
+      expect(link).toHaveTextContent(labels[project.linkType])
       expect(link).toHaveAttribute('target', '_blank')
       expect(link).toHaveAttribute('rel', 'noopener noreferrer')
-    })
+    }
   })
 
   it('swaps a failing image for a neutral fallback (no broken icon)', () => {

@@ -43,13 +43,14 @@ export function ProjectCard({ project }: { project: Project }) {
             </li>
           ))}
         </ul>
+        {project.link && project.linkType && (
         <a
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-1.5 self-start font-medium text-teal-300 transition hover:text-teal-200"
         >
-          {t('projects.viewDetails')}
+          {t(`projects.linkLabels.${project.linkType}`)}
           <span className="sr-only"> — {title}</span>
           <svg
             aria-hidden="true"
@@ -65,6 +66,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <path d="M7 17L17 7M9 7h8v8" />
           </svg>
         </a>
+        )}
       </div>
     </article>
   )

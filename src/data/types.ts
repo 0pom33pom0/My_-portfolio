@@ -7,7 +7,10 @@ export interface Project {
   id: 'ehp' | 'metaherb' | 'roblox' | 'jo'
   image: string
   tech: string[]
-  link: string
+  /** Omit both for confidential work with no public destination. */
+  link?: string
+  /** Picks the localized action label: projects.linkLabels.<linkType>. */
+  linkType?: 'website' | 'play' | 'code'
 }
 
 export interface Certificate {

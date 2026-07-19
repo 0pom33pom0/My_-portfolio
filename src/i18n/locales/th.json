@@ -61,7 +61,11 @@
   "projects": {
     "eyebrow": "ผลงานคัดสรร",
     "heading": "ผลงาน",
-    "viewDetails": "ดูรายละเอียด",
+    "linkLabels": {
+      "website": "เยี่ยมชมเว็บไซต์",
+      "play": "เล่นเกมบน Roblox",
+      "code": "ดูโค้ดบน GitHub"
+    },
     "items": {
       "ehp": {
         "title": "โมดูลโรงพยาบาล EHP",
