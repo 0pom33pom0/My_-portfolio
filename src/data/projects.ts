@@ -15,9 +15,9 @@ export const projects: Project[] = [
   },
   {
     id: 'roblox',
-    image: '/images/projects/project-roblox.svg',
+    image: '/images/projects/project-roblox.jpg',
     tech: ['Roblox Studio', 'Luau'],
-    link: 'https://github.com/0pom33pom0',
+    link: 'https://www.roblox.com/th/games/12874932794/unnamed',
   },
   {
     id: 'jo',
