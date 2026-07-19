@@ -5,20 +5,30 @@ import th from '../i18n/locales/th.json'
 import { projects } from '../data/projects.ts'
 import { Projects } from './Projects.tsx'
 
-describe('Projects (FR-015, FR-024)', () => {
+describe('Projects marquee (FR-015, FR-024)', () => {
   beforeEach(async () => {
     await i18n.changeLanguage('en')
   })
 
-  it('renders three cards with localized titles and descriptions', () => {
+  it('renders every project card inside a labeled carousel region', () => {
     render(<Projects />)
     for (const project of projects) {
       const { title, description } = en.projects.items[project.id]
+      // Clones are aria-hidden, so role queries only see the real set.
       expect(
         screen.getByRole('heading', { level: 3, name: title }),
       ).toBeInTheDocument()
-      expect(screen.getByText(description)).toBeInTheDocument()
+      expect(screen.getAllByText(description).length).toBeGreaterThan(0)
     }
+    expect(
+      screen.getByRole('region', { name: en.a11y.projectsCarousel }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: en.a11y.nextProject }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: en.a11y.prevProject }),
+    ).toBeInTheDocument()
   })
 
   it('renders localized titles in Thai', async () => {
@@ -50,11 +60,13 @@ describe('Projects (FR-015, FR-024)', () => {
   it('swaps a failing image for a neutral fallback (no broken icon)', () => {
     render(<Projects />)
     const title = en.projects.items.ehp.title
-    const image = screen.getByAltText(title)
+    const [image] = screen.getAllByAltText(title)
 
     fireEvent.error(image)
 
-    expect(screen.queryByAltText(title)).not.toBeInTheDocument()
+    // The visible card now shows the styled fallback block instead.
     expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+    // Only the aria-hidden clone keeps the original <img>.
+    expect(screen.getAllByAltText(title)).toHaveLength(1)
   })
 })
