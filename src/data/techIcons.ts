@@ -5,6 +5,7 @@ import {
   siDelphi,
   siDocker,
   siDotnet,
+  siExpo,
   siFlutter,
   siGithub,
   siGitlab,
@@ -48,6 +49,9 @@ const STARBURST_PATH =
  */
 export const techIcons: Record<string, TechIcon> = {
   React: { path: siReact.path, color: `#${siReact.hex}` },
+  'React Native': { path: siReact.path, color: `#${siReact.hex}` },
+  Expo: { path: siExpo.path, color: '#ffffff' },
+  NativeWind: { path: siTailwindcss.path, color: `#${siTailwindcss.hex}` },
   'Next.js': { path: siNextdotjs.path, color: '#ffffff' },
   'Tailwind CSS': { path: siTailwindcss.path, color: `#${siTailwindcss.hex}` },
   Flutter: { path: siFlutter.path, color: '#54C5F8' },

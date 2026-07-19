@@ -75,6 +75,10 @@
         "title": "Metaherb E-commerce Platform",
         "description": "A production e-commerce platform for a Thai herbal brand, live at metaherb.co.th — storefront with categories and reviews, cart and PromptPay QR checkout, coupons, order management, and an admin analytics dashboard with a built-in AI product assistant. Designed and built entirely solo with React + Go + Docker through a fully AI-assisted, spec-driven workflow."
       },
+      "metaherbMobile": {
+        "title": "Metaherb Mobile App (In Development)",
+        "description": "Bringing the Metaherb e-commerce platform to mobile with React Native + Expo — the same storefront, search, categories, and notifications in a native app, with more native features landing step by step. Built solo with the same AI-assisted workflow as the web platform."
+      },
       "roblox": {
         "title": "Learn-to-Code Roblox Game",
         "description": "\"Game Rian Code\" — a published Roblox world that teaches coding logic through quests and puzzles, built with Roblox Studio and Luau and used in real classroom activities. Playable on Roblox."

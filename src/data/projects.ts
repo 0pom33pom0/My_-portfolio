@@ -15,6 +15,12 @@ export const projects: Project[] = [
     linkType: 'website',
   },
   {
+    // In active development — no public destination yet, so no link.
+    id: 'metaherbMobile',
+    image: '/images/projects/project-metaherb-mobile.jpg',
+    tech: ['React Native', 'Expo', 'NativeWind'],
+  },
+  {
     id: 'roblox',
     image: '/images/projects/project-roblox.jpg',
     tech: ['Roblox Studio', 'Luau'],
