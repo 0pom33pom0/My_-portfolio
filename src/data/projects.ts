@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: 'ehp',
     image: '/images/projects/project-ehp.jpg',
-    tech: ['Object Pascal (Delphi)', 'Node.js', 'Express.js', 'SQL'],
+    tech: ['Object Pascal (Delphi)', 'Node.js', 'Express.js', 'MongoDB', 'SQL'],
     link: 'https://github.com/0pom33pom0',
   },
   {

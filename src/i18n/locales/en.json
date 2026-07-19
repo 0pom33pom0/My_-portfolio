@@ -65,7 +65,7 @@
     "items": {
       "ehp": {
         "title": "Healthcare EHP Modules",
-        "description": "Modules for a hospital information system (EHP) that clinical staff use in real Thai hospitals every day — such as the patient home-visit registry shown (patient data blurred). I contributed selected Delphi-side modules and several Node.js/Express API endpoints; deeper details are withheld under the company's confidentiality agreement."
+        "description": "Modules for a hospital information system (EHP) that clinical staff use in real Thai hospitals every day — such as the patient home-visit registry shown (patient data blurred). I contributed selected Delphi-side modules and several Node.js/Express API endpoints, with MongoDB as a central store bridging data to other systems; deeper details are withheld under the company's confidentiality agreement."
       },
       "metaherb": {
         "title": "Metaherb E-commerce Platform",
