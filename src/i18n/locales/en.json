@@ -65,7 +65,7 @@
     "items": {
       "ehp": {
         "title": "Healthcare EHP Modules",
-        "description": "Clinical and back-office modules for hospital information systems — appointment flows, lab result viewing, and pharmacy tooling built for daily use in Thai healthcare."
+        "description": "Modules for a hospital information system (EHP) that clinical staff use in real Thai hospitals every day — such as the patient home-visit registry shown (patient data blurred). Built with Delphi, Go, and SQL across clinical and back-office workflows; deeper details are withheld under the company's confidentiality agreement."
       },
       "metaherb": {
         "title": "Metaherb E-commerce Platform",

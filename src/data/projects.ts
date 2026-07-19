@@ -3,7 +3,7 @@ import type { Project } from './types.ts'
 export const projects: Project[] = [
   {
     id: 'ehp',
-    image: '/images/projects/project-ehp.svg',
+    image: '/images/projects/project-ehp.jpg',
     tech: ['Object Pascal (Delphi)', 'Go', 'SQL'],
     link: 'https://github.com/0pom33pom0',
   },
