@@ -68,8 +68,8 @@
         "description": "Clinical and back-office modules for hospital information systems — appointment flows, lab result viewing, and pharmacy tooling built for daily use in Thai healthcare."
       },
       "metaherb": {
-        "title": "Metaherb E-commerce Dashboard",
-        "description": "An admin dashboard for a herbal-products store: sales analytics, inventory, and order management with role-based access — built as a fast single-page app."
+        "title": "Metaherb E-commerce Platform",
+        "description": "A production e-commerce platform for a Thai herbal brand, live at metaherb.co.th — storefront with categories and reviews, cart and PromptPay QR checkout, coupons, order management, and an admin analytics dashboard with a built-in AI product assistant. Designed and built entirely solo with React + Go + Docker through a fully AI-assisted, spec-driven workflow."
       },
       "roblox": {
         "title": "Educational Roblox Game",

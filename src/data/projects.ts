@@ -9,9 +9,9 @@ export const projects: Project[] = [
   },
   {
     id: 'metaherb',
-    image: '/images/projects/project-metaherb.svg',
-    tech: ['React', 'Tailwind CSS', 'Go'],
-    link: 'https://github.com/0pom33pom0',
+    image: '/images/projects/project-metaherb.jpg',
+    tech: ['React', 'Go', 'Docker'],
+    link: 'https://metaherb.co.th/',
   },
   {
     id: 'roblox',
