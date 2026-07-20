@@ -83,6 +83,10 @@
         "title": "Learn-to-Code Roblox Game",
         "description": "\"Game Rian Code\" — a published Roblox world that teaches coding logic through quests and puzzles, built with Roblox Studio and Luau and used in real classroom activities. Playable on Roblox."
       },
+      "claudeSkills": {
+        "title": "pom-claude-skills — AI Dev Pipeline",
+        "description": "A personal library of Claude Code skills synced across machines with git — headlined by pomdev-speckit-auto, a one-command autonomous pipeline that takes an app from spec, plan, and task breakdown through TDD implementation, QC, and merge. The very portfolio you are reading was built with it."
+      },
       "jo": {
         "title": "Fun Math Game (Year-1 Project)",
         "description": "A forest-adventure desktop math game built in my first year at university: pick +, −, × or ÷ mode, then pair number bubbles to hit the target answer against the clock. C# WinForms with Guna UI, plus sign-up/login and per-player score history stored in MySQL."

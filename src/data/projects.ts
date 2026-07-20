@@ -34,4 +34,11 @@ export const projects: Project[] = [
     link: 'https://github.com/0pom33pom0/project_jo-C',
     linkType: 'code',
   },
+  {
+    id: 'claudeSkills',
+    image: '/images/projects/project-claude-skills.jpg',
+    tech: ['Claude', 'Git', 'Markdown'],
+    link: 'https://github.com/0pom33pom0/pom-claude-skills',
+    linkType: 'code',
+  },
 ]
