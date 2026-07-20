@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import i18n from '../i18n/index.ts'
 import en from '../i18n/locales/en.json'
 import th from '../i18n/locales/th.json'
+import { site } from '../config/site.ts'
 import { Hero } from './Hero.tsx'
 
 describe('Hero (FR-010/011/012)', () => {
@@ -34,10 +35,10 @@ describe('Hero (FR-010/011/012)', () => {
     expect(screen.getByText(th.hero.role)).toBeInTheDocument()
   })
 
-  it('links Download Resume to /resume.pdf with a download attribute', () => {
+  it('links Download Resume to the configured PDF with a download attribute', () => {
     render(<Hero />)
     const download = screen.getByRole('link', { name: en.hero.downloadResume })
-    expect(download).toHaveAttribute('href', '/resume.pdf')
+    expect(download).toHaveAttribute('href', site.resumeUrl)
     expect(download).toHaveAttribute('download')
   })
 

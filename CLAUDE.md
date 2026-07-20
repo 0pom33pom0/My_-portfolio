@@ -28,7 +28,7 @@ wep_pom/
 ├── eslint.config.js            # flat config
 ├── public/
 │   ├── images/                 # fixed-path images: profile/, projects/
-│   └── resume.pdf              # real resume (source: docs/resume/resume.html)
+│   └── suracha_hanthongchai_resume.pdf   # real resume (HTML design: docs/resume/)
 └── src/
     ├── main.tsx                # entry: fonts, i18n side-effect import, render
     ├── App.tsx                 # MotionConfig + section assembly
@@ -67,7 +67,7 @@ Quality gate before every commit (constitution Article III): `npm run lint && np
 ## Swapping Real Content
 
 - **Images**: gallery and certificates are auto-discovered at build time via `import.meta.glob` — drop ANY number of images into `src/assets/gallery/` (ordered by filename, optional caption keys `gallery.items.<stem>.caption`) or `src/assets/certificates/` (filename convention `YYYY-MM Name.ext` → parsed date + display name, i18n `certificates.items.<id>.name` overrides). Profile/projects images stay at fixed paths under `public/images/` referenced from `Hero.tsx` / `src/data/projects.ts`.
-- **Resume**: `public/resume.pdf` is the real resume; edit `docs/resume/resume.html` and re-print to A4 PDF to update it.
+- **Resume**: `public/suracha_hanthongchai_resume.pdf` is the real resume (URL from `site.ts`); `docs/resume/resume.html` holds a matching design you can print to PDF.
 - **Identity/links**: edit `src/config/site.ts` (email, GitHub, LinkedIn, resume path).
 - **Thai name spelling** in `th.json` is an unverified transliteration — confirm with the owner.
 

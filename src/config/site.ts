@@ -10,7 +10,7 @@ export const site: SiteConfig = {
   facebookUrl: 'https://www.facebook.com/suracha.hanthongchai',
   instagramUrl: 'https://www.instagram.com/manmini_pom',
   w3profileUrl: 'https://www.w3profile.com/pomdev/',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/suracha_hanthongchai_resume.pdf',
 }
 
 /** Brand names are data, not translations (FR-002). */

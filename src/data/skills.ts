@@ -3,7 +3,7 @@ import type { SkillCategory } from './types.ts'
 export const skillCategories: SkillCategory[] = [
   {
     id: 'frontend',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'Flutter'],
+    skills: ['React', 'Tailwind CSS', 'Flutter'],
   },
   {
     id: 'backend',
