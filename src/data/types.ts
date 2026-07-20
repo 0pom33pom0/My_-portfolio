@@ -39,5 +39,8 @@ export interface SiteConfig {
   facebookUrl: string
   instagramUrl: string
   w3profileUrl: string
+  /** Thai resume PDF. */
   resumeUrl: string
+  /** English resume PDF, served when the site is viewed in English. */
+  resumeUrlEn: string
 }

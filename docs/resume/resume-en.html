@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #24344d;
+    --ink: #1a2b47;
+    --body: #2f3b4c;
+    --muted: #7b8794;
+    --blue: #2f80ed;
+    --blue-soft: #2d9cdb;
+    --rule: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { width: 794px; }
+  body { font-family: 'Sarabun', sans-serif; font-size: 12.4px; line-height: 1.5; color: var(--body); background: #fff; }
+  .page { width: 794px; min-height: 1122px; padding: 24px 34px 20px; }
+
+  /* header card */
+  .head {
+    background: var(--navy); border-radius: 16px; padding: 20px 26px;
+    display: flex; gap: 24px; align-items: center; color: #fff;
+  }
+  .head img { width: 126px; height: 140px; object-fit: cover; border-radius: 10px; }
+  .head .who { flex: 1; }
+  .h-name-en { font-family: 'Prompt', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: .02em; line-height: 1.15; }
+  .h-name-th { font-family: 'Prompt', sans-serif; font-size: 17px; font-weight: 600; color: #cbd7e6; margin-top: 2px; }
+  .h-rule { height: 2.5px; background: var(--blue-soft); margin: 10px 0; border-radius: 2px; }
+  .h-role { font-family: 'Prompt', sans-serif; font-size: 14.5px; font-weight: 600; letter-spacing: .04em; color: #56ccf2; text-transform: uppercase; }
+  .h-contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 7px 18px; margin-top: 11px; font-size: 12.3px; font-weight: 600; }
+  .h-contact span { display: flex; align-items: center; gap: 8px; }
+  .h-contact .ic { width: 21px; height: 21px; border-radius: 999px; background: rgba(255,255,255,.14); display: grid; place-items: center; flex-shrink: 0; }
+  .h-contact svg { width: 11px; height: 11px; fill: #fff; }
+
+  /* sections */
+  h2 { font-family: 'Prompt', sans-serif; font-size: 16.5px; font-weight: 700; color: var(--ink); margin: 15px 0 4px; }
+  h2 .th { color: var(--muted); font-weight: 500; font-size: 13px; }
+  .rule { height: 1.5px; background: var(--rule); margin-bottom: 8px; }
+
+  .summary { text-align: justify; }
+
+  /* timeline */
+  .tl { position: relative; padding-left: 40px; }
+  .tl::before { content: ''; position: absolute; left: 13px; top: 8px; bottom: 14px; width: 2.5px; background: #1a2233; }
+  .tl-item { position: relative; margin-bottom: 11px; }
+  .tl-ic { position: absolute; left: -40px; top: 0; width: 28px; height: 28px; border-radius: 999px; background: #1a2233; display: grid; place-items: center; }
+  .tl-ic svg { width: 14px; height: 14px; fill: #fff; }
+  .jt { display: flex; align-items: baseline; gap: 14px; }
+  .jt b { font-family: 'Prompt', sans-serif; font-size: 15px; font-weight: 700; color: #111827; }
+  .co { font-family: 'Prompt', sans-serif; font-size: 14px; font-weight: 600; color: var(--blue); }
+  .co-sub { font-size: 10.8px; font-weight: 700; color: var(--blue-soft); letter-spacing: .03em; }
+  .dates { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  ul.b { margin: 5px 0 0 16px; }
+  ul.b li { margin-top: 3px; }
+
+  /* education */
+  .deg { font-family: 'Prompt', sans-serif; font-size: 15px; font-weight: 700; color: #111827; }
+  .edu-detail { margin: 4px 0 0 16px; }
+  .edu-detail b { font-weight: 700; color: #111827; }
+
+  /* skills */
+  .skills { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 4px; }
+  .sg b { font-family: 'Prompt', sans-serif; font-size: 13px; font-weight: 700; color: #111827; display: block; margin-bottom: 3px; }
+  .sg ul { margin-left: 15px; }
+  .sg li { margin-top: 2px; font-size: 12.2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <img src="../../public/images/profile/profile.jpg" alt="" />
+    <div class="who">
+      <div class="h-name-en">SURACHA HANTHONGCHAI</div>
+      <div class="h-name-th">สุรชา หาญธงชัย</div>
+      <div class="h-rule"></div>
+      <div class="h-role">Software Developer &amp; Computer Educator</div>
+      <div class="h-contact">
+        <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.85 21 3 13.15 3 3.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/></svg></span>092-740-3227</span>
+        <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.93 9h-3.47a15.6 15.6 0 0 0-2.1-6.53A8.02 8.02 0 0 1 19.93 11ZM12 4.2c1.1 1.55 2.03 3.94 2.44 6.8H9.56c.41-2.86 1.34-5.25 2.44-6.8ZM4.07 13h3.47c.24 2.4.97 4.68 2.1 6.53A8.02 8.02 0 0 1 4.07 13Zm3.47-2H4.07a8.02 8.02 0 0 1 5.57-6.53A15.6 15.6 0 0 0 7.54 11ZM12 19.8c-1.1-1.55-2.03-3.94-2.44-6.8h4.88c-.41 2.86-1.34 5.25-2.44 6.8Zm2.36-.27a15.6 15.6 0 0 0 2.1-6.53h3.47a8.02 8.02 0 0 1-5.57 6.53Z"/></svg></span>https://pomdevth.site</span>
+        <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 5c0-.55.45-1 1-1h18c.55 0 1 .45 1 1v.35l-10 6.25L2 5.35V5Zm0 2.7V19c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V7.7l-9.47 5.92c-.33.2-.73.2-1.06 0L2 7.7Z"/></svg></span>suracha.h@kkumail.com</span>
+        <span><span class="ic"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>github.com/0pom33pom0</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Professional Summary</h2>
+  <div class="rule"></div>
+  <p class="summary">A software developer with a talent for knowledge sharing, combined with the ability to build applications end to end — Mobile, Web, WebSocket, and Desktop. Experienced in designing and developing health information system modules as well as e-commerce platforms, with the ability to apply AI technology in real workflows. A systematic thinker and strong communicator who works well in teams and coordinates effectively across departments.</p>
+
+  <h2>Work Experience <span class="th">(ประสบการณ์ทำงาน)</span></h2>
+  <div class="rule"></div>
+  <div class="tl">
+    <div class="tl-item">
+      <span class="tl-ic"><svg viewBox="0 0 24 24"><path d="m9.4 16.6-4.6-4.6 4.6-4.6L8 6l-6 6 6 6 1.4-1.4Zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4Z"/></svg></span>
+      <div class="jt"><b>Developer</b></div>
+      <div class="jt"><span class="co">Bangkok Medical Software Co., Ltd.</span><span class="dates">Apr 2024 – Present</span></div>
+      <div class="co-sub">BANGKOK MEDICAL SOFTWARE CO.,LTD.</div>
+      <ul class="b">
+        <li>Develop health information system modules, including the home health care system, with Delphi</li>
+        <li>Build a full-cycle e-commerce platform — React web, Flutter mobile app, and a Go backend with MySQL as the central database connecting the systems</li>
+        <li>Deploy to production servers with Docker and set up CI/CD via Git</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <span class="tl-ic"><svg viewBox="0 0 24 24"><path d="M12 2 1.6 7.6 12 13.2l8.4-4.52v6.52h2V7.6L12 2Zm-6.4 9.93v4.47c0 1.1.72 2.06 1.9 2.74C8.68 19.83 10.26 20.2 12 20.2s3.32-.37 4.5-1.06c1.18-.68 1.9-1.64 1.9-2.74v-4.47l-6.4 3.44-6.4-3.44Z"/></svg></span>
+      <div class="jt"><b>Student Teacher (Computer Science)</b><span class="dates">May 2023 – Apr 2024</span></div>
+      <div class="jt"><span class="co">Phuwiengwittayakhom School, Khon Kaen</span></div>
+      <div class="co-sub">PHUWIENGWITTAYAKHOM SCHOOL</div>
+      <ul class="b">
+        <li>Taught computer and technology classes at the secondary level and coached students for computer competitions</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <span class="tl-ic"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3Zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13Zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5Z"/></svg></span>
+      <div class="jt"><b>Activity Team &amp; Teaching Assistant</b><span class="dates">2021 – 2022</span></div>
+      <div class="jt"><span class="co">The Winner Tutor</span></div>
+      <div class="co-sub">THE WINNER TUTOR</div>
+      <ul class="b">
+        <li>Ran recreational activities for academic camps to create a positive learning atmosphere</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Education <span class="th">(ประวัติการศึกษา)</span></h2>
+  <div class="rule"></div>
+  <div class="deg">Bachelor of Education (B.Ed.)</div>
+  <ul class="edu-detail">
+    <li>Computer Education, Faculty of Education, Khon Kaen University — Academic years 2020 – 2024<br /><b>First-Class Honors (GPA: 3.82)</b></li>
+  </ul>
+
+  <h2>Skills <span class="th">(ทักษะความสามารถ)</span></h2>
+  <div class="rule"></div>
+  <div class="skills">
+    <div class="sg"><b>Frontend</b><ul><li>React</li><li>Tailwind CSS</li><li>Flutter</li></ul></div>
+    <div class="sg"><b>Backend &amp; Database</b><ul><li>Go</li><li>Node.js</li><li>Express.js</li><li>SQL</li><li>MongoDB</li><li>Swagger</li></ul></div>
+    <div class="sg"><b>Programming Languages</b><ul><li>Dart</li><li>Python</li><li>C++</li><li>C#</li><li>Lua</li><li>Object Pascal (Delphi)</li></ul></div>
+    <div class="sg"><b>AI Tools</b><ul><li>Claude Code</li><li>MedGemma</li><li>Gemini</li><li>ChatGPT</li><li>GLM</li><li>Kimi</li></ul></div>
+    <div class="sg"><b>Dev Tools</b><ul><li>GitHub</li><li>GitLab</li><li>CI/CD</li><li>Taiga</li></ul></div>
+  </div>
+
+</div>
+</body>
+</html>

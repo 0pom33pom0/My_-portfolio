@@ -4,7 +4,10 @@ import { site } from '../config/site.ts'
 import { Reveal } from './ui/Reveal.tsx'
 
 export function Hero() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  // Thai visitors download the Thai resume; everyone else the English one.
+  const resumeHref =
+    i18n.resolvedLanguage === 'th' ? site.resumeUrl : site.resumeUrlEn
   const [imageFailed, setImageFailed] = useState(false)
 
   return (
@@ -37,7 +40,7 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
-              href={site.resumeUrl}
+              href={resumeHref}
               download
               className="inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r from-teal-400 to-sky-500 px-6 font-semibold text-zinc-950 shadow-lg shadow-teal-500/20 transition hover:brightness-110"
             >
