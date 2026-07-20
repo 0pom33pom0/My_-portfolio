@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- minimum-scale keeps iOS Safari from zooming out below 100% when its
+         heuristics count the marquee scrollers' inner width; zooming IN for
+         accessibility stays fully allowed. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
     <meta
       name="description"
       content="Portfolio of Suracha Hanthongchai (Pom Pam) — Software Developer & Computer Educator building scalable applications, healthcare software, and AI-assisted workflows."
