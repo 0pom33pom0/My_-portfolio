@@ -10,6 +10,17 @@
     color-scheme: dark;
   }
 
+  /* Mobile browsers count the marquee ULs' full width into the document
+     scroll area even though their scrollers contain them, letting users
+     pinch-zoom out into empty space. Clip (not hidden — clip creates no
+     scroll container, so the sticky navbar keeps working) pins the page
+     to the viewport width; the fallback line covers pre-clip browsers. */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
