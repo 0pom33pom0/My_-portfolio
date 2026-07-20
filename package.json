@@ -23,6 +23,8 @@
     "simple-icons": "^16.26.0"
   },
   "devDependencies": {
+    "@emnapi/core": "^1.11.2",
+    "@emnapi/runtime": "^1.11.2",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/jest-dom": "^6.9.1",
