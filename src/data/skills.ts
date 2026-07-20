@@ -19,6 +19,6 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: 'tools',
-    skills: ['GitHub', 'GitLab', 'Taiga'],
+    skills: ['GitHub', 'GitLab', 'Taiga', 'CI/CD'],
   },
 ]

@@ -5,6 +5,7 @@ import { LanguageSwitcher } from './LanguageSwitcher.tsx'
 
 const SECTION_IDS = [
   'about',
+  'experience',
   'education',
   'skills',
   'projects',

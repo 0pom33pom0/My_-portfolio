@@ -2,6 +2,7 @@ import { MotionConfig } from 'framer-motion'
 import { Navbar } from './components/Navbar.tsx'
 import { Hero } from './components/Hero.tsx'
 import { About } from './components/About.tsx'
+import { Experience } from './components/Experience.tsx'
 import { Education } from './components/Education.tsx'
 import { Skills } from './components/Skills.tsx'
 import { Projects } from './components/Projects.tsx'
@@ -17,6 +18,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Experience />
         <Education />
         <Skills />
         <Projects />

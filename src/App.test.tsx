@@ -7,6 +7,7 @@ import App from './App.tsx'
 
 const SECTION_IDS = [
   'about',
+  'experience',
   'education',
   'skills',
   'projects',
@@ -17,6 +18,7 @@ const SECTION_IDS = [
 
 const SECTION_HEADINGS = [
   'about',
+  'experience',
   'education',
   'skills',
   'projects',
