@@ -1,6 +1,6 @@
 {
 	// Cloudflare Workers config — serves the Vite build output as a static site
-	"name": "my-portfolio",
+	"name": "myportfolio",
 	"compatibility_date": "2026-07-01",
 	"assets": {
 		"directory": "./dist",
