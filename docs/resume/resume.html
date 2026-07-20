@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0f172a;
+    --body: #334155;
+    --muted: #64748b;
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --line: #e2e8f0;
+    --chip: #f0fdfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { width: 794px; }
+  body {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 13.2px;
+    line-height: 1.62;
+    color: var(--body);
+    background: #fff;
+  }
+  .page { width: 794px; height: 1122px; padding: 52px 52px 36px; display: flex; flex-direction: column; }
+
+  /* ---- header ---- */
+  .header { display: flex; align-items: center; gap: 24px; }
+  .header .id { flex: 1; }
+  h1 { font-family: 'Prompt', sans-serif; font-size: 31px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+  .latin-name { font-size: 13px; color: var(--muted); margin-top: 2px; letter-spacing: .02em; }
+  .role { font-family: 'Prompt', sans-serif; font-size: 15.5px; font-weight: 600; color: var(--teal); margin-top: 6px; }
+  .tagline { margin-top: 7px; max-width: 560px; }
+
+  /* ---- contact strip ---- */
+  .contact { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 16px 0 0; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--line); border-radius: 10px; font-size: 11.5px; }
+  .contact b { font-family: 'Prompt', sans-serif; font-weight: 600; color: var(--teal-dark); margin-right: 5px; font-size: 10.5px; }
+
+  .callout { display: flex; align-items: center; gap: 14px; margin-top: 12px; padding: 11px 16px; border-radius: 10px; background: linear-gradient(90deg, #f0fdfa, #f0f9ff); border: 1px solid #ccfbf1; font-size: 12px; }
+  .callout-label { font-family: 'Prompt', sans-serif; font-weight: 600; color: var(--teal-dark); white-space: nowrap; }
+  .callout b { color: var(--teal-dark); }
+  /* ---- columns ---- */
+  .cols { display: flex; gap: 28px; margin-top: 18px; flex: 1; min-height: 0; }
+  .col-main { flex: 1.55; }
+  .col-side { flex: 1; }
+
+  h2 {
+    font-family: 'Prompt', sans-serif; font-size: 15.5px; font-weight: 600; color: var(--ink);
+    display: flex; align-items: center; gap: 8px; margin: 24px 0 12px;
+  }
+  h2:first-child { margin-top: 0; }
+  h2::before { content: ''; width: 17px; height: 3.5px; border-radius: 2px; background: linear-gradient(90deg, #14b8a6, #38bdf8); }
+
+  .job { margin-bottom: 18px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .job-title { font-family: 'Prompt', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink); }
+  .period { font-size: 10.5px; color: var(--teal-dark); font-weight: 600; white-space: nowrap; background: var(--chip); border: 1px solid #ccfbf1; padding: 1px 8px; border-radius: 999px; }
+  .org { font-size: 11.8px; color: var(--muted); margin-top: 1px; }
+  ul.duties { margin: 4px 0 0 2px; list-style: none; }
+  ul.duties li { padding-left: 14px; position: relative; margin-top: 4px; }
+  ul.duties li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, #14b8a6, #38bdf8); }
+
+  .proj { margin-bottom: 9px; padding-left: 12px; border-left: 2.5px solid #99f6e4; }
+  .proj-title { font-family: 'Prompt', sans-serif; font-weight: 600; font-size: 12.5px; color: var(--ink); }
+  .proj-title .link { color: var(--teal-dark); font-family: 'Sarabun', sans-serif; font-weight: 600; font-size: 11px; }
+  .proj p { font-size: 11.8px; }
+
+  .edu { margin-bottom: 14px; }
+  .edu .deg { font-family: 'Prompt', sans-serif; font-weight: 600; font-size: 12.5px; color: var(--ink); }
+  .edu .inst { font-size: 11.8px; color: var(--muted); }
+  .honor { display: inline-block; margin-top: 3px; font-size: 10.8px; font-weight: 700; color: var(--teal-dark); background: var(--chip); border: 1px solid #ccfbf1; border-radius: 999px; padding: 1.5px 9px; }
+
+  .skill-group { margin-bottom: 10px; }
+  .skill-group b { font-family: 'Prompt', sans-serif; font-size: 11px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 2px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 11px; background: #f8fafc; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; color: var(--body); }
+
+  .award { margin-bottom: 8px; padding-left: 12px; position: relative; font-size: 11.6px; }
+  .award::before { content: ''; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border-radius: 999px; background: #f59e0b; }
+  .award b { font-family: 'Prompt', sans-serif; font-size: 11.6px; font-weight: 600; color: var(--ink); }
+  .award .y { color: var(--muted); font-size: 10.5px; }
+
+  .footer { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .quote { font-family: 'Prompt', sans-serif; font-size: 11.5px; font-weight: 500; color: var(--teal-dark); }
+  .site { font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="id">
+      <h1>สุรชา หาญธงชัย</h1>
+      <div class="latin-name">Suracha Hanthongchai · พอมแพม (Pom Pam)</div>
+      <div class="role">Software Developer &amp; Computer Educator</div>
+      <p class="tagline">พัฒนาซอฟต์แวร์ด้านสุขภาพและแพลตฟอร์มธุรกิจแบบครบวงจร พร้อมนำ AI เข้ามาเสริมเวิร์กโฟลว์การทำงานจริง ตั้งแต่ระบบโรงพยาบาลไปจนถึงห้องเรียน</p>
+    </div>
+  </div>
+
+  <div class="contact">
+    <span><b>EMAIL</b> suracha.h@kkumail.com</span>
+    <span><b>โทร</b> 092-740-3227</span>
+    <span><b>LINE</b> 33120pom</span>
+    <span><b>WEB</b> pomdevth.site</span>
+    <span><b>GITHUB</b> github.com/0pom33pom0</span>
+  </div>
+
+
+  <div class="callout">
+    <span class="callout-label">ผลงาน · รางวัล · เกียรติบัตร</span>
+    <span>ดูฉบับเต็มพร้อมภาพจริงและลิงก์โปรเจกต์ได้ที่ <b>pomdevth.site</b></span>
+  </div>
+
+  <div class="cols">
+    <div class="col-main">
+      <h2>ประสบการณ์ทำงาน</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Developer</span>
+          <span class="period">2567 – ปัจจุบัน</span>
+        </div>
+        <div class="org">บริษัท บางกอก เมดิคอล ซอฟต์แวร์ จำกัด (BMS)</div>
+        <ul class="duties">
+          <li>พัฒนาโมดูลระบบสารสนเทศสุขภาพ รวมถึงระบบดูแลสุขภาพที่บ้าน ด้วย Delphi</li>
+          <li>สร้างแพลตฟอร์มอีคอมเมิร์ซครบวงจร — เว็บ React, แอปมือถือ และหลังบ้านภาษา Go โดยมี MongoDB เป็นฐานข้อมูลกลางเชื่อมระบบ</li>
+          <li>Deploy ระบบจริงด้วย Docker พร้อมวางระบบ CI/CD ผ่าน Git</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">ครูฝึกสอนคอมพิวเตอร์ (Student Teacher)</span>
+          <span class="period">2566 – 2567</span>
+        </div>
+        <div class="org">โรงเรียนภูเวียงวิทยาคม จ.ขอนแก่น</div>
+        <ul class="duties">
+          <li>สอนวิชาคอมพิวเตอร์/เทคโนโลยีระดับมัธยมศึกษา และฝึกสอนนักเรียนเข้าแข่งขันทางคอมพิวเตอร์</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">ทีมงานนันทนาการและผู้ช่วยสอน</span>
+          <span class="period">2564 – 2565</span>
+        </div>
+        <div class="org">เดอะวินเนอร์ติวเตอร์ (The Winner Tutor)</div>
+        <ul class="duties">
+          <li>ดูแลและจัดกิจกรรมนันทนาการค่ายวิชาการ เพื่อสร้างบรรยากาศการเรียนรู้เชิงบวก</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="col-side">
+      <h2>การศึกษา</h2>
+      <div class="edu">
+        <div class="deg">ศึกษาศาสตรบัณฑิต (คอมพิวเตอร์ศึกษา)</div>
+        <div class="inst">มหาวิทยาลัยขอนแก่น · ปีการศึกษา 2563 – 2567</div>
+        <span class="honor">เกียรตินิยมอันดับ 1 · GPA 3.82</span>
+      </div>
+      <div class="edu">
+        <div class="deg">มัธยมศึกษาปีที่ 4 – 6</div>
+        <div class="inst">โรงเรียนกำแพง · ปีการศึกษา 2560 – 2562</div>
+        <span class="honor">GPA 3.68</span>
+      </div>
+
+      <h2>ทักษะ</h2>
+      <div class="skill-group"><b>Frontend</b>
+        <div class="chips"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Tailwind CSS</span><span class="chip">Flutter</span></div>
+      </div>
+      <div class="skill-group"><b>Backend &amp; Database</b>
+        <div class="chips"><span class="chip">Go</span><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">SQL</span><span class="chip">MongoDB</span><span class="chip">Swagger</span></div>
+      </div>
+      <div class="skill-group"><b>ภาษาโปรแกรม</b>
+        <div class="chips"><span class="chip">Dart</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">C#</span><span class="chip">Lua</span><span class="chip">Delphi</span></div>
+      </div>
+      <div class="skill-group"><b>AI Tools</b>
+        <div class="chips"><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">MedGemma</span><span class="chip">ChatGPT</span><span class="chip">GLM</span></div>
+      </div>
+      <div class="skill-group"><b>Dev Tools</b>
+        <div class="chips"><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">Taiga</span><span class="chip">CI/CD</span><span class="chip">Docker</span></div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="quote">“ที่บอกว่าทำไม่ได้ คุณลองทำหรือยัง”</span>
+    <span class="site">พอร์ตโฟลิโอฉบับเต็ม → pomdevth.site</span>
+  </div>
+
+</div>
+</body>
+</html>

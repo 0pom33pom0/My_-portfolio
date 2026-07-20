@@ -58,7 +58,7 @@ src/
 | Gallery photos      | Drop **any number** of images into `src/assets/gallery/` (jpg/png/webp/svg) — they appear automatically, ordered by filename. Optional caption per photo: add `gallery.items.<filename-without-extension>.caption` to **both** locale files. |
 | Certificates        | Drop **any number** of images into `src/assets/certificates/` named `YYYY-MM Certificate name.jpg` (e.g. `2025-01 Regional AI Award.jpg`) — issue date and name come from the filename; Thai filenames work. No date prefix = name-only card. A `certificates.items.<id>.name` translation overrides the display name. |
 | Profile & projects  | Replace `public/images/profile/profile.jpg`, `public/images/education/graduation.jpg`, and `public/images/projects/project-*.svg` keeping the filenames (or update the paths in `src/data/projects.ts` / `Hero.tsx` / `Education.tsx`). |
-| Resume              | Overwrite `public/resume.pdf` with the real file.                                        |
+| Resume              | Real resume ships at `public/resume.pdf`; source design lives in `docs/resume/resume.html` (edit → print to PDF at A4 → overwrite). |
 | Contact channels    | `src/config/site.ts` — email, phone, LINE id, and every social URL in one place. |
 | Wording             | `src/i18n/locales/en.json` + `th.json` — always edit **both**; `npm test` enforces parity. |
 
